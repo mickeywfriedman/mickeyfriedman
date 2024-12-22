@@ -1,0 +1,32 @@
+.overlay
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: -1
+	pointer-events: none
+	--overlay-gradient-opacity-start: 1
+	--overlay-gradient-opacity-end: 0.25
+	--overlay-opacity: 0
+	background-color: rgba(var(--overlay-rgb), var(--overlay-opacity))
+	transform: translateZ(0)
+.overlay_dark
+	--overlay-rgb: 0, 0, 0
+.overlay_light
+	--overlay-rgb: 255, 255, 255
+
+/** Themed overlays **/
+.overlay_theme-from-top-to-bottom
+	background-image: linear-gradient(180deg, rgba(var(--overlay-rgb), var(--overlay-gradient-opacity-start)) 0%, rgba(var(--overlay-rgb), var(--overlay-gradient-opacity-end)) 100%)
+.overlay_theme-from-bottom-to-top
+	background-image: linear-gradient(0deg, rgba(var(--overlay-rgb), var(--overlay-gradient-opacity-start)) 0%, rgba(var(--overlay-rgb), var(--overlay-gradient-opacity-end)) 100%)
+
+.overlay_theme-from-left-to-right
+	background-image: linear-gradient(90deg, rgba(var(--overlay-rgb), var(--overlay-gradient-opacity-start)) 0%, rgba(var(--overlay-rgb), var(--overlay-gradient-opacity-end)) 100%)
+.overlay_theme-from-right-to-left
+	background-image: linear-gradient(270deg, rgba(var(--overlay-rgb), var(--overlay-gradient-opacity-start)) 0%, rgba(var(--overlay-rgb), var(--overlay-gradient-opacity-end)) 100%)
+
+@for $i from 1 through 9
+	.overlay_opacity-#{$i * 10}
+		--overlay-opacity: #{calc($i / 10)}

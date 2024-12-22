@@ -1,0 +1,25 @@
+.section-portfolio-grid__col-filter
+	position: relative
+	transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.3s ease
+	box-shadow: 0px 0px 30px 0px rgba(24, 24, 24, 0)
+	@include fluid('padding-top', 20, 40)
+	@include fluid('padding-bottom', 20, 40)
+	&.sticking
+		border-color: transparent
+		box-shadow: 0px 0px 30px 0px rgba(24, 24, 24, 0.04)
+
+.section-portfolio-grid_hovered
+	.portfolio-card__link:hover
+		.hover-zoom__zoom
+			transform: scale(0.98)
+		.hover-zoom__inner
+			transform: scale(1.02)
+
+.section-portfolio-grid_hovered-zoom-out
+	.portfolio-card__link:not(:hover)
+		.hover-zoom__zoom
+			transform: scale(0.95)
+		.hover-zoom__inner
+			transform: scale(1.05)
+	.portfolio-card__opacity-link:not(:hover)
+		opacity: .5

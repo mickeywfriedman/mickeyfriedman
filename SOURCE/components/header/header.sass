@@ -1,0 +1,34 @@
+.header
+	position: static
+	--header-min-gutters-horizontal: 20
+	--header-max-gutters-horizontal: 40
+	--header-min-gutters-vertical: 10
+	--header-max-gutters-vertical: 30
+	a, select, input
+		pointer-events: initial
+
+.header__border-horizontal
+	transform-origin: left center
+	+trans1
+.header__border-vertical
+	transform-origin: top center
+	+trans1
+
+.header__label
+	position: relative
+	white-space: nowrap
+	transition: transform 0.3s ease
+
+.header__label-hover
+	position: absolute
+	top: 0
+	left: 0
+	transform: translateY(100%)
+	opacity: 0
+	+trans1
+	color: currentColor
+
+.header__label-normal
+	position: relative
+	transform: translateY(0%)
+	+trans1

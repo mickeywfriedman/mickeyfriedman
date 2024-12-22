@@ -1,0 +1,75 @@
+.button-circle
+	position: relative
+	--button-paddings-min: 20
+	--button-paddings-max: 30
+	--button-size-min: 80
+	--button-size-max: 160
+	+fluid('--button-paddings', var(--button-paddings-min), var(--button-paddings-max))
+	+fluid('--button-size', var(--button-size-min), var(--button-size-max))
+	padding-top: 0
+	padding-left: var(--button-paddings)
+	padding-bottom: 0
+	padding-right: var(--button-paddings)
+	min-width: var(--button-size)
+	min-height: var(--button-size)
+	border-radius: 100%
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	text-align: center
+	border: 1px solid var(--color-border-solid)
+	background: none
+	transition: color 0.2s cubic-bezier(0.785, 0.135, 0.150, 0.860), border-color 0.2s cubic-bezier(0.785, 0.135, 0.150, 0.860), opacity 0.2s cubic-bezier(0.785, 0.135, 0.150, 0.860)
+	cursor: pointer
+	&:hover
+		color: var(--color-accent)
+		border-color: currentColor
+	&[class*=bg-]
+		border: none
+	&[disabled]
+		pointer-events: none
+		opacity: 0.2
+	&:before
+		content: ''
+		display: block
+		padding-top: calc(100% + (var(--button-paddings) * 2))
+.button-border-opacity
+	border-color: var(--color-border-opacity)
+	svg
+		transition: opacity 0.2s ease
+	&:hover
+		border-color: currentColor !important
+		svg
+			opacity: 0
+.button-progress
+	.svg-circle
+		position: absolute
+		top: -3px
+		left: -3px
+		width: calc(100% + 6px)
+		height: calc(100% + 6px)
+		stroke: var(--color-accent)
+		border-radius: 100%
+		stroke-width: 0.5px
+		stroke-dashoffset: 0.001
+		stroke-dasharray: 0px, 999999px
+		// stroke-width: 1px
+	*
+		pointer-events: none !important
+		user-select: none !important
+.button-progress_animating
+	border-color: var(--color-border-opacity) !important
+.button-progress__hold
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	opacity: 0
+.has-click-and-hold, .has-click-and-hold *
+	-webkit-touch-callout: none !important
+	user-select: none !important
+
+.has-cursor-follower
+	.button-circle[data-arts-cursor-follower-target*='magnetic']:not(.has-click-and-hold a)
+		&:hover
+			border-color: transparent

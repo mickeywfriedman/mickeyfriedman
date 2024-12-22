@@ -1,0 +1,35 @@
+.marquee-header
+	position: relative
+	width: 100%
+.marquee-header__lane
+	display: flex
+	flex-wrap: nowrap
+	overflow: hidden
+	white-space: nowrap
+	text-align: center
+.marquee-header__lane_mask
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 100
+	margin: 0 auto
+.marquee-header__lane_v-center
+	position: absolute
+	top: 50%
+	left: 0
+	right: 0
+	transform: translateY(-50%)
+	height: 100%
+.marquee-header__inner
+	position: relative
+	overflow: hidden
+	z-index: 50
+a.marquee-header__item
+	display: inline-block
+	&:hover
+		*
+			color: currentColor
+.auto-scroll-next__heading
+	margin: 0

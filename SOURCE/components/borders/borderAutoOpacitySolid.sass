@@ -1,0 +1,36 @@
+.b-auto-opacity-solid
+	--color-borders: var(--color-border-solid)
+	border: 1px solid var(--color-borders)
+
+.bt-auto-opacity-solid
+	--color-borders: var(--color-border-solid)
+	border-top: 1px solid var(--color-borders)
+
+.br-auto-opacity-solid
+	--color-borders: var(--color-border-solid)
+	border-right: 1px solid var(--color-borders)
+
+.bb-auto-opacity-solid
+	--color-borders: var(--color-border-solid)
+	border-bottom: 1px solid var(--color-borders)
+
+.bl-auto-opacity-solid
+	--color-borders: var(--color-border-solid)
+	border-left: 1px solid var(--color-borders)
+
+.borders-solid
+	--color-borders: var(--color-border-solid) !important
+
+.borders-opacity
+	--color-borders: var(--color-border-opacity) !important
+
+.borders-auto-opacity-solid
+	--color-borders: var(--color-border-solid) !important
+
+[data-arts-color-theme='dark']
+	.borders-auto-opacity-solid, .b-auto-opacity-solid .bt-auto-opacity-solid, .br-auto-opacity-solid, .bb-auto-opacity-solid, .bl-auto-opacity-solid
+		--color-borders: var(--color-border-opacity) !important
+
+.borders-auto-opacity-solid, .b-auto-opacity-solid .bt-auto-opacity-solid, .br-auto-opacity-solid, .bb-auto-opacity-solid, .bl-auto-opacity-solid
+	&[data-arts-color-theme='dark']
+		--color-borders: var(--color-border-opacity) !important

@@ -1,0 +1,297 @@
+/* Typography */
+\:root
+	--font-primary: 'Nunito Sans', sans-serif
+	--font-secondary: 'Butler', serif
+
+	/* Paragraph */
+	--paragraph-font-family: var(--font-primary)
+	--paragraph-min-font-size: 16
+	--paragraph-max-font-size: 18
+	--paragraph-min-line-height: 24
+	--paragraph-max-line-height: 32
+	--paragraph-letter-spacing: 0
+	--paragraph-color-light-theme: #20211F
+	--paragraph-color-dark-theme: #dfdfdf
+	--paragraph-color: var(--paragraph-color-light-theme)
+
+	/* Buttons */
+	--ui-element-font-family: var(--font-primary)
+	--ui-element-min-font-size: 14
+	--ui-element-max-font-size: 16
+	--ui-element-font-weight: 600
+	--ui-element-line-height: 1
+	--ui-element-letter-spacing: 0
+	--ui-element-color-light-theme: #20211F
+	--ui-element-color-dark-theme: #fff
+	--ui-element-color: var(--ui-element-color-light-theme)
+
+	/* Display XXL *
+	--display-xxl-font-family: var(--font-secondary)
+	--display-xxl-max-font-size: 288
+	--display-xxl-min-font-size: 80
+	--display-xxl-font-weight: 200
+	--display-xxl-line-height: 1.2
+	--display-xxl-letter-spacing: -0.02em
+	--display-xxl-color-light-theme: #20211F
+	--display-xxl-color-dark-theme: #ffffff
+	--display-xxl-color: var(--display-xxl-color-light-theme)
+
+	/* Display XL *
+	--display-xl-font-family: var(--font-secondary)
+	--display-xl-max-font-size: 216
+	--display-xl-min-font-size: 80
+	--display-xl-font-weight: 200
+	--display-xl-line-height: 1.2
+	--display-xl-letter-spacing: -0.02em
+	--display-xl-color-light-theme: #20211F
+	--display-xl-color-dark-theme: #ffffff
+	--display-xl-color: var(--display-xl-color-light-theme)
+
+	/* Display caps */
+	--display-caps-font-family: var(--font-secondary)
+	--display-caps-max-font-size: 144
+	--display-caps-min-font-size: 48
+	--display-caps-font-weight: 200
+	--display-caps-line-height: 1.2
+	--display-caps-letter-spacing: 0.06em
+	--display-caps-color-light-theme: #20211F
+	--display-caps-color-dark-theme: #ffffff
+	--display-caps-color: var(--display-caps-color-light-theme)
+
+	/* Heading 1 */
+	--h1-font-family: var(--font-secondary)
+	--h1-max-font-size: 170
+	--h1-min-font-size: 54
+	--h1-font-weight: 200
+	--h1-line-height: 1.2
+	--h1-letter-spacing: -0.01em
+	--h1-color-light-theme: #20211F
+	--h1-color-dark-theme: #ffffff
+	--h1-color: var(--h1-color-light-theme)
+
+	/* Heading 2 */
+	--h2-font-family: var(--font-secondary)
+	--h2-max-font-size: 144
+	--h2-min-font-size: 48
+	--h2-font-weight: 200
+	--h2-line-height: 1.2
+	--h2-letter-spacing: -0.01em
+	--h2-color-light-theme: #20211F
+	--h2-color-dark-theme: #ffffff
+	--h2-color: var(--h2-color-light-theme)
+
+	/* Heading 3 */
+	--h3-font-family: var(--font-secondary)
+	--h3-max-font-size: 86
+	--h3-min-font-size: 42
+	--h3-font-weight: 200
+	--h3-line-height: 1.2
+	--h3-letter-spacing: 0
+	--h3-color-light-theme: #20211F
+	--h3-color-dark-theme: #ffffff
+	--h3-color: var(--h3-color-light-theme)
+
+	/* Heading 4 */
+	--h4-font-family: var(--font-secondary)
+	--h4-max-font-size: 54
+	--h4-min-font-size: 32
+	--h4-font-weight: 300
+	--h4-line-height: 1.25
+	--h4-letter-spacing: 0
+	--h4-color-light-theme: #20211F
+	--h4-color-dark-theme: #ffffff
+	--h4-color: var(--h4-color-light-theme)
+
+	/* Heading 5 */
+	--h5-font-family: var(--font-primary)
+	--h5-max-font-size: 30
+	--h5-min-font-size: 18
+	--h5-font-weight: 700
+	--h5-line-height: 1.3
+	--h5-letter-spacing: 0
+	--h5-color-light-theme: #20211F
+	--h5-color-dark-theme: #ffffff
+	--h5-color: var(--h5-color-light-theme)
+
+	/* Heading 6 */
+	--h6-font-family: var(--font-primary)
+	--h6-max-font-size: 20
+	--h6-min-font-size: 16
+	--h6-font-weight: 700
+	--h6-line-height: 1.3
+	--h6-letter-spacing: 0
+	--h6-color-light-theme: #20211F
+	--h6-color-dark-theme: #ffffff
+	--h6-color: var(--h6-color-light-theme)
+
+	/* Blockquote */
+	--blockquote-font-family: var(--font-primary)
+	--blockquote-max-font-size: 24
+	--blockquote-min-font-size: 18
+	--blockquote-font-weight: 400
+	--blockquote-line-height: 1.33
+	--blockquote-letter-spacing: 0
+	--blockquote-color-light-theme: #20211F
+	--blockquote-color-dark-theme: #ffffff
+	--blockquote-color: var(--blockquote-color-light-theme)
+
+	/* Dropcap */
+	--dropcap-font-family: var(--font-secondary)
+	--dropcap-max-font-size: 112
+	--dropcap-min-font-size: 52
+	--dropcap-font-weight: 200
+	--dropcap-line-height: 0.7
+	--dropcap-letter-spacing: 0
+	--dropcap-color-light-theme: #20211F
+	--dropcap-color-dark-theme: #ffffff
+	--dropcap-color: var(--dropcap-color-light-theme)
+
+	/* Subheading */
+	--subheading-font-family: var(--font-primary)
+	--subheading-max-font-size: 13
+	--subheading-min-font-size: 11
+	--subheading-font-weight: 700
+	--subheading-line-height: 1.3
+	--subheading-letter-spacing: 0.15em
+	--subheading-color-light-theme: #20211F
+	--subheading-color-dark-theme: #dfdfdf
+	--subheading-color: var(--subheading-color-light-theme)
+
+	/* Overlay menu item */
+	--overlay-menu-item-font-family: var(--font-secondary)
+	--overlay-menu-item-max-font-size: 144
+	--overlay-menu-item-min-font-size: 42
+	--overlay-menu-item-font-weight: 200
+	--overlay-menu-item-line-height: 1.2
+	--overlay-menu-item-letter-spacing: -0.01em
+	--overlay-menu-item-color-light-theme: #20211F
+	--overlay-menu-item-color-dark-theme: #ffffff
+	--overlay-menu-item-color: var(--overlay-menu-item-color-light-theme)
+
+	/* Overlay submenu item */
+	--overlay-submenu-item-font-family: var(--font-secondary)
+	--overlay-submenu-item-max-font-size: 54
+	--overlay-submenu-item-min-font-size: 32
+	--overlay-submenu-item-font-weight: 300
+	--overlay-submenu-item-line-height: 1.3
+	--overlay-submenu-item-letter-spacing: 0
+	--overlay-submenu-item-color-light-theme: #20211F
+	--overlay-submenu-item-color-dark-theme: #ffffff
+	--overlay-submenu-item-color: var(--overlay-submenu-item-color-light-theme)
+
+	/* Super label */
+	--super-label-font-family: var(--font-primary)
+	--super-label-max-font-size: 18
+	--super-label-min-font-size: 12
+	--super-label-font-weight: 700
+	--super-label-line-height: 1
+	--super-label-letter-spacing: 0
+	--super-label-color-light-theme: #20211F
+	--super-label-color-dark-theme: #ffffff
+	--super-label-color: var(--super-label-color-light-theme)
+
+/* Distances */
+\:root
+	/* Fluid paddings & margins (min values) */
+	--distance-min-xxsmall: 20
+	--distance-min-xsmall: 30
+	--distance-min-small: 40
+	--distance-min-medium: 40
+	--distance-min-large: 50
+	--distance-min-xlarge: 90
+
+	/* Fluid paddings & margins (max values) */
+	--distance-max-xxsmall: 30
+	--distance-max-xsmall: 40
+	--distance-max-small: 80
+	--distance-max-medium: 120
+	--distance-max-large: 180
+	--distance-max-xlarge: 240
+
+	/* Container & page gutters */
+	--gutter-horizontal-min: 20
+	--gutter-horizontal-max: 120
+	--gutter-vertical-min: 20
+	--gutter-vertical-max: 80
+	+fluid(--gutter-horizontal, var(--gutter-horizontal-min), var(--gutter-horizontal-max))
+	+fluid(--gutter-vertical, var(--gutter-vertical-min), var(--gutter-vertical-max))
+
+	/* Bootstrap */
+	--bs-gutter-x: 20px
+	--bs-gutter-y: 20px
+
+/* Colors */
+\:root
+	/* Dark colors */
+	--color-dark-1: #20211F
+	--color-dark-1-rgb: 32, 33, 31
+
+	--color-dark-2: #1B1A18
+	--color-dark-2-rgb: 27, 26, 24
+
+	--color-dark-3: #313130
+	--color-dark-3-rgb: 49, 49, 48
+
+	--color-dark-4: #060707
+	--color-dark-4-rgb: 6, 7, 7
+
+	/* Gray colors */
+	--color-gray-1: #939597
+	--color-gray-1-rgb: 147, 149, 151
+
+	--color-gray-2: #C0C0C0
+	--color-gray-2-rgb: 192, 192, 192
+
+	--color-gray-3: #777777
+	--color-gray-3-rgb: 119, 119, 119
+
+	--color-gray-4: #888888
+	--color-gray-4-rgb: 136, 136, 136
+
+	/* Light colors */
+	--color-light-1: #DBDAD7
+	--color-light-1-rgb: 219, 218, 215
+
+	--color-light-2: #E8E6E0
+	--color-light-2-rgb: 232, 230, 224
+
+	--color-light-3: #F1F2ED
+	--color-light-3-rgb: 241, 242, 237
+
+	--color-light-4: #FFFFFF
+	--color-light-4-rgb: 255, 255, 255
+
+	/* Platinum colors */
+	--color-platinum-1: #767B75
+	--color-platinum-1-rgb: 118, 123, 117
+
+	--color-platinum-2: #686D67
+	--color-platinum-2-rgb: 104, 109, 103
+
+	/* Accent colors */
+	--color-accent-light-theme: #656453
+	--color-accent-light-theme-rgb: 101, 100, 83
+
+	--color-accent-dark-theme: #FDF9CF
+	--color-accent-dark-theme-rgb: 253, 249, 207
+
+	--color-accent: var(--color-accent-light-theme)
+	--color-accent-rgb: 101, 100, 83
+
+	/* Border colors */
+	--color-border-opacity-light-theme: rgba(32, 33, 32, .2)
+	--color-border-opacity-dark-theme: rgba(255, 255, 255, .2)
+	--color-border-opacity: var(--color-border-opacity-light-theme)
+
+	--color-border-solid-light-theme: #20211F
+	--color-border-solid-dark-theme: #fff
+	--color-border-solid: var(--color-border-solid-light-theme)
+
+	/* Links colors */
+	--color-links-light-theme: #666
+	--color-links-dark-theme: #fff
+	--color-links: var(--color-links-light-theme)
+
+	--color-classic-submenu-links: #000
+	--color-classic-submenu-links-hover: #656453
+	--color-classic-submenu-links-hover-background: #65645315

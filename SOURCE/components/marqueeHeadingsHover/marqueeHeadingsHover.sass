@@ -1,0 +1,136 @@
+.marquee-headings-hover
+	position: relative
+	display: flex
+	flex-direction: column
+	justify-content: center
+	width: 100%
+	height: 100%
+	overflow: hidden
+	&[data-arts-os-animation="true"]
+		.marquee-headings-hover__button-hover
+			opacity: 0
+			transform: translate(-50%, -50%) scale(1)
+.marquee-headings-hover__content
+	transition: opacity 0.2s ease
+	transition-delay: 0.3s
+	z-index: 50
+.marquee-headings-hover__header
+	display: flex
+	flex-wrap: wrap
+	align-items: stretch
+.marquee-headings-hover__wrapper-button
+	position: relative
+	display: inline-block
+.marquee-headings-hover__wrapper-button_absolute
+	display: inline-block
+	line-height: 1
+	position: absolute
+	left: var(--gutter-horizontal)
+	bottom: var(--gutter-vertical)
+	z-index: 50
+	pointer-events: none
+	&.text-start
+		left: var(--gutter-horizontal)
+		right: auto
+	&.text-center
+		left: var(--gutter-horizontal)
+		right: var(--gutter-horizontal)
+	&.text-end
+		left: auto
+		right: var(--gutter-horizontal)
+.marquee-headings-hover__item
+	position: relative
+	display: inline-block
+	transition: color 0.3s ease
+	max-width: 100%
+	z-index: 50
+	&:hover
+		*
+			color: currentColor
+		.marquee-headings-hover__counter
+			border-color: currentColor
+.marquee-headings-hover__button-normal, .marquee-headings-hover__button-hover
+	transition: transform 0.3s ease, opacity 0.3s ease
+.marquee-headings-hover__button-normal
+	//
+.marquee-headings-hover__button-hover
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%) scale(0)
+.marquee-headings-hover__heading, .headings-hover__item-image
+	transition: opacity 0.3s ease
+	max-width: 100%
+.headings-hover__item-image
+	width: 100%
+.marquee-headings-hover__heading
+	will-change: opacity
+.marquee-headings-hover__images
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	pointer-events: none
+	z-index: -1
+	overflow: hidden
+.marquee-headings-hover__inner-img
+	display: inline-flex
+	img, video
+		flex: 1
+		height: 60vh
+		width: auto
+		object-fit: contain
+		object-position: center center
+.marquee-headings-hover__images_right
+	.marquee-headings-hover__wrapper-img
+		left: auto
+		right: var(--gutter-horizontal)
+		transform: translate(0%, -50%)
+		max-width: calc(100% - var(--gutter-horizontal))
+.marquee-headings-hover__images_left
+	.marquee-headings-hover__wrapper-img
+		left: var(--gutter-horizontal)
+		right: var(--gutter-horizontal)
+		transform: translate(0%, -50%)
+		max-width: calc(100% - var(--gutter-horizontal) * 2)
+.marquee-headings-hover__wrapper-img
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	overflow: hidden
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	clip-path: polygon(0% 0%, 100% 0%, 100% calc(var(--shape-size) * 1%), 0% calc(var(--shape-size) * 1%))
+	--shape-size: 0
+	z-index: 0
+.marquee-headings-hover__counter
+	vertical-align: middle
+	margin-right: calc(var(--gutter-horizontal) / 2)
+	margin-bottom: 0.5em
+	transition: border-color 0.3s ease
+	flex: 1 0 auto
+.marquee-headings-hover__col-content
+	display: flex
+	flex-wrap: wrap
+	align-items: stretch
+
++max-screen-md
+	.marquee-headings-hover__wrapper-img
+		max-width: calc(100% - var(--gutter-horizontal) * 2)
+		width: auto
+		height: auto
+		margin: auto
+	.marquee-headings-hover__images_right, .marquee-headings-hover__images_left
+		width: 100%
+		right: 0
+		left: 0
+		.marquee-headings-hover__wrapper-img
+			max-width: calc(100% - var(--gutter-horizontal) * 2)
+			left: 0
+			right: 0
+
+.marquee-heading, .marquee-delimiter
+	display: inline-flex

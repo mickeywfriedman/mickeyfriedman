@@ -1,0 +1,10 @@
+.post-date-floating
+	display: inline-flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	--date-size-min: 60
+	--date-size-max: 100
+	+fluid('width', var(--date-size-min), var(--date-size-max))
+	+fluid('height', var(--date-size-min), var(--date-size-max))
+	text-align: center

@@ -1,0 +1,23 @@
+.sub-menu-holder
+	+reset-list
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	pointer-events: none
+	.sub-menu
+		width: 100%
+		height: 100%
+		z-index: 50
+		&.current
+			pointer-events: auto
+
++max-screen-md
+	.sub-menu-holder
+		.sub-menu
+			overflow-y: auto
+			-webkit-overflow-scrolling: touch
+			overscroll-behavior: contain
+			max-height: calc(var(--fix-bar-vh,1vh) * 100)
+			padding-bottom: calc(var(--header-height) * 2)

@@ -1,0 +1,35 @@
+.widget
+	select
+		width: 100%
+		max-width: 100%
+	ul, ol
+		+reset-list
+		text-align: left
+		li
+			display: block
+			margin-bottom: 0.5em
+			&:last-child
+				margin-bottom: 0
+			.children, .sub-menu
+				margin-top: 0.5em
+		ul, ol
+			width: 100%
+			padding-left: 1em
+			margin-top: 1em
+		.sub-menu
+			padding-left: 1em
+			margin-top: 0.5em
+	.inline-links
+		text-align: inherit
+.widget__title
+	margin-top: 0.5em
+	margin-bottom: 0.5em
+.widget__title_underline
+	&:after
+		content: ''
+		display: block
+		width: 100%
+		height: 2px
+		background-color: var(--color-border-solid)
+		margin-top: 0.25em
+		margin-bottom: 0.5em

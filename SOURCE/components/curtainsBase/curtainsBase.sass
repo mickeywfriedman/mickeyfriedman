@@ -1,0 +1,20 @@
+.canvas-wrapper
+	position: absolute
+	top: 0
+	left: 0
+	width: 100vw
+	height: 100vh
+	pointer-events: none
+	z-index: 0
+.has-curtains
+	img, video
+		visibility: hidden
+		opacity: 0
+.no-curtains
+	.canvas-wrapper
+		opacity: 0
+		visibility: hidden
+.canvas-wrapper ~
+	img, video
+		visibility: hidden
+		opacity: 0

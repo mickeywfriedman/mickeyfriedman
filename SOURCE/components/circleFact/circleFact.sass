@@ -1,0 +1,11 @@
+.circle-fact
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	border-radius: 100%
+	text-align: center
+	--shape-paddings-min: 30
+	--shape-paddings-max: 80
+	+fluid('padding', var(--shape-paddings-min), var(--shape-paddings-max))
+	white-space: nowrap

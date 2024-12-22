@@ -1,0 +1,164 @@
+.arts-cursor
+	--cursor-color: var(--color-accent-light-theme)
+	--cursor-color-dark-theme: var(--color-accent-dark-theme)
+	--cursor-border-width: 1px
+	--cursor-background-color: transparent
+	--cursor-background-color-dark-theme: transparent
+	position: fixed
+	top: 0
+	left: 0
+	transform: scale(0)
+	user-select: none
+	pointer-events: none
+	z-index: 100001
+	color: var(--cursor-color, transparent)
+	*
+		user-select: none
+		pointer-events: none
+.has-cursor-follower
+	.arts-cursor.uses-css-vars
+		transform: translate(calc(var(--translateX, 0px) - 50%), calc(var(--translateY, 0px) - 50%)) rotate(var(--rotate, 0deg)) scale(var(--scaleX, 0), var(--scaleY, 0))
+		scale: var(--scaleX, 0), var(--scaleY, 0)
+		*
+			--translateX: initial
+			--translateY: initial
+			--rotate: initial
+			--scaleX: initial
+			--scaleY: initial
+		.arts-cursor__follower
+			transform: scale(calc(var(--scale, 1) * var(--scale-pressed, 1)))
+			*
+				--scale: initial
+				--scale-pressed: initial
+		.arts-cursor__wrapper
+			transform: rotate(var(--rotate, 0deg))
+			*
+				--rotate: initial
+
+.arts-cursor__follower
+	position: relative
+	width: 60px
+	height: 60px
+	border-radius: 100%
+	box-shadow: inset 0 0 0 var(--cursor-border-width, 1px) currentColor
+	background-color: var(--cursor-background-color, transparent)
+
+.arts-cursor__wrapper
+	position: relative
+	width: 100%
+	height: 100%
+
+.arts-cursor__arrow
+	position: absolute
+	margin: auto
+	font-size: 24px !important
+	width: 24px
+	height: 24px
+	opacity: 0
+	visibility: hidden
+
+.arts-cursor__arrow_left
+	top: 0
+	bottom: 0
+	left: 0
+
+.arts-cursor__arrow_right
+	top: 0
+	bottom: 0
+	right: 0
+
+.arts-cursor__arrow_up
+	top: 0
+	left: 0
+	right: 0
+
+.arts-cursor__arrow_down
+	bottom: 0
+	left: 0
+	right: 0
+
+.arts-cursor__wrapper-label, .arts-cursor__wrapper-icon, .arts-cursor__wrapper-loading
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	text-align: center
+
+.arts-cursor__label
+	display: block
+	opacity: 0
+	visibility: hidden
+	white-space: nowrap
+
+.arts-cursor__icon
+	display: inline-block
+	opacity: 0
+	visibility: hidden
+	font-size: 28px !important
+	width: 28px
+	height: 28px
+	vertical-align: middle
+
+	&:before
+		margin: 0
+		vertical-align: top
+
+.arts-cursor-none
+	cursor: none !important
+
+	*
+		cursor: none !important
+
+.arts-cursor-progress
+	cursor: progress !important
+
+	*
+		cursor: progress !important
+
+.arts-cursor__label
+	font-size: 14px
+	line-height: 1.2
+	font-weight: bold
+	letter-spacing: 0
+
+.arts-is-dragging
+	cursor: none !important
+
+	*
+		cursor: none !important
+
+	.arts-is-dragging__blocker
+		visibility: visible
+		opacity: 1
+		z-index: 100
+
+.arts-is-dragging__blocker
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 100
+	opacity: 0
+	visibility: hidden
+	transition-delay: 0.2s
+
+.arts-cursor__wrapper-loading
+	transform: translate(-50%, -50%) scale(0)
+	width: 100%
+	height: 100%
+	svg
+		animation: rotate 2s linear infinite
+		transform-origin: center center
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		margin: auto
+		circle
+			stroke: currentColor
+			stroke-width: 2px
+			stroke-dasharray: 150, 200
+			stroke-dashoffset: -150
+			animation: dash 1.5s ease-in-out infinite
+			stroke-linecap: round

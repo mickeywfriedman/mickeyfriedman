@@ -1,0 +1,45 @@
+.widget_recent_entries
+	.post-date
+		display: block
+		width: 100%
+		font-size: 13px
+		font-weight: 600
+		opacity: 0.7
+	ul
+		li
+			padding: 0.75em 0
+			margin-bottom: 0 !important
+			border-bottom: 1px solid var(--color-border-opacity)
+			a
+				display: inline-block
+				font-size: 16px
+				font-weight: 600
+				line-height: 1.5
+				span
+					display: inline-block
+			&:first-child
+				padding-top: 0
+			&:last-child
+				padding-bottom: 0
+				border-bottom: none
+
+.wp-block-latest-posts__list
+	li
+		padding: 1em 0
+		margin-bottom: 0 !important
+		border-bottom: 1px solid var(--color-border-opacity)
+		a
+			font-weight: 500
+			line-height: 1.5
+			span
+				display: inline-block
+		&:first-child
+			padding-top: 0
+		&:last-child
+			padding-bottom: 0
+			border-bottom: none
+.wp-block-latest-posts__post-date
+	display: block
+	width: 100%
+	@extend .subheading
+	margin-top: 0.25em

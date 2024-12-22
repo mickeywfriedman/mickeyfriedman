@@ -1,0 +1,23 @@
+.section-fullheight
+	display: flex
+.section-fullheight__inner
+	position: relative
+	display: flex
+	flex-direction: column
+	justify-content: center
+	width: 100%
+	min-height: 100vh
+	z-index: 50
+.section-fullheight__inner_mobile
+	height: calc(var(--fix-bar-vh, 1vh) * 100)
+	min-height: 0vh
+
++max-screen-md
+	.section-fullheight__inner_mobile-auto
+		height: auto
+		display: block
+		min-height: 0
+	.section-fullheight__inner_mobile-min-auto
+		height: auto
+		display: block
+		min-height: 100vh

@@ -1,0 +1,134 @@
+.slider-fullpage-backgrounds
+	position: relative
+	width: 100%
+	height: 100%
+	overflow: hidden
+	z-index: 50
+	&.locked
+		.slider-fullpage-backgrounds__section
+			pointer-events: none !important
+			*
+				pointer-events: none !important
+.slider-fullpage-backgrounds[data-arts-os-animation="true"]
+	.slider-fullpage-backgrounds__section:first-child
+		opacity: 1
+		.slider-fullpage-backgrounds__wrapper-background
+			opacity: 1
+			*:not(.slider-fullpage-backgrounds__overlay)
+				opacity: 1
+		.slider-fullpage-backgrounds__wrapper-content
+			opacity: 0
+.slider-fullpage-backgrounds__wrapper-background
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	overflow: hidden
+	--shape-size: 100
+	--shape-size-multipler: 1
+	--shape-position: calc(82.5% - var(--gutter-horizontal))
+.slider-fullpage-backgrounds__wrapper-background:not(.js-ajax-transition-clone)
+	z-index: 10 !important
+.slider-fullpage-backgrounds__wrapper-background_mask-circle
+	clip-path: circle(calc(max(var(--shape-size) * var(--shape-size-multipler) * 1vw, var(--shape-size) * var(--shape-size-multipler) * 1vh)) at var(--shape-position) 50%)
+
+.slider-fullpage-backgrounds__wrapper-background-mask
+	display: flex
+	align-items: center
+	justify-content: center
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	overflow: hidden
+	transform-origin: center center
+.slider-fullpage-backgrounds__header
+	position: relative
+.slider-fullpage-backgrounds__wrapper-text
+	display: inline-block
+	max-width: 600px
+.slider-fullpage-backgrounds__wrapper-content
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	width: 100%
+	z-index: 50
+.slider-fullpage-backgrounds__container
+	display: flex
+	flex-direction: column
+	justify-content: center
+	height: 100%
+	width: 100%
+	padding-left: calc(var(--gutter-horizontal) * 2.5)
+	padding-right: calc(var(--gutter-horizontal) * 2.5)
+.slider-fullpage-backgrounds__section
+	perspective: 1px
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	overflow: hidden
+.slider-fullpage-backgrounds__section:not([data-arts-fullpage-slider-section-state="current"])
+	pointer-events: none
+	*
+		pointer-events: none
+.slider-fullpage-backgrounds__overlay
+	opacity: 0
+	z-index: 20
+.slider-fullpage-backgrounds__col
+	position: relative
+	height: 100%
+.slider-fullpage-backgrounds__col_gutters
+	padding-top: calc(var(--header-height) + var(--gutter-vertical))
+	padding-right: calc(var(--gutter-horizontal) * 2)
+	padding-bottom: var(--gutter-vertical)
+	padding-left: calc(var(--gutter-horizontal) * 2)
+
+.slider-fullpage-backgrounds__wrapper-button_centered
+	position: absolute
+	top: 50%
+	left: 0%
+	transform: translate(-50%, -50%)
+	z-index: 100
+.slider-fullpage-backgrounds__wrapper-background_arc
+	width: auto
+	height: 100%
+	aspect-ratio: 1 / 1.5
+	margin: 0 auto
+.slider-fullpage-backgrounds__wrapper-button_arc
+	position: absolute
+	top: 50%
+	left: auto
+	right: 0
+	transform: translate(0, -50%)
+	z-index: 100
+
++max-screen-xl
+	.slider-fullpage-backgrounds__col_gutters
+		padding-top: var(--header-height)
+		padding-right: 0
+		padding-bottom: var(--gutter-vertical)
+		padding-left: 0
+	.slider-fullpage-backgrounds__wrapper-button_centered
+		left: 50%
+
++max-screen-lg
+	.slider-fullpage-backgrounds__container
+		padding-left: var(--gutter-horizontal)
+		padding-right: var(--gutter-horizontal)
+
++max-screen-sm
+	.slider-fullpage-backgrounds__header
+		width: 100%
+	.slider-fullpage-backgrounds__wrapper-background
+		--shape-position: 50%
+		--shape-size-multipler: 1.2
+	.slider-fullpage-backgrounds__wrapper-background_arc
+		width: 100%
+		height: 100%
+		aspect-ratio: initial

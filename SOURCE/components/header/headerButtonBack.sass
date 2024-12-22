@@ -1,0 +1,43 @@
+.header__overlay-menu-back
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	position: absolute !important
+	top: 0
+	left: 0
+	cursor: pointer
+	opacity: 0
+	visibility: hidden
+	pointer-events: auto
+	z-index: 500
+	transform: translateY(-30px)
+	+trans1
+	&:hover
+		.header__arrow-back-line
+			&:before
+				transform: translateX(100%)
+			&:after
+				transform: translateX(0%)
+		.header__label_opened-back
+			transform: translateY(-100%)
+			opacity: 0
+		.header__label_opened-hover
+			transform: translateY(0%)
+			opacity: 1
+.has-cursor-follower
+	.header__overlay-menu-back[data-arts-cursor-follower-target]
+		&:hover
+			.header__label
+				transform: translateX(20px)
+.header__label_opened-hover
+	position: absolute
+	top: 0
+	left: 0
+	transform: translateY(100%)
+	opacity: 0
+	+trans1
+	color: currentColor
+.header__label_opened-back
+	position: relative
+	transform: translateY(0%)
+	+trans1

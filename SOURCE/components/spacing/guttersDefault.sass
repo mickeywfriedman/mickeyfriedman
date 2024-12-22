@@ -1,0 +1,81 @@
+$distance_prefixes: 'm', 'p'
+$mixin_prefix: 'margin'
+$directions: 'horizontal', 'vertical'
+
+@each $prefix in $distance_prefixes
+	@if $prefix == 'p'
+		$mixin_prefix: 'padding'
+
+	// All sides
+	.#{$prefix}-gutters
+		#{$mixin_prefix}-top: var(--gutter-vertical)
+		#{$mixin_prefix}-bottom: var(--gutter-vertical)
+		#{$mixin_prefix}-left: var(--gutter-horizontal)
+		#{$mixin_prefix}-right: var(--gutter-horizontal)
+	.#{$prefix}-min-gutters
+		#{$mixin_prefix}-top: calc(var(--gutter-vertical-min) * 1px)
+		#{$mixin_prefix}-bottom: calc(var(--gutter-vertical-min) * 1px)
+		#{$mixin_prefix}-left: calc(var(--gutter-horizontal-min) * 1px)
+		#{$mixin_prefix}-right: calc(var(--gutter-horizontal-min) * 1px)
+
+	// Horizontal
+	.#{$prefix}x-gutters
+		#{$mixin_prefix}-left: var(--gutter-horizontal)
+		#{$mixin_prefix}-right: var(--gutter-horizontal)
+	.#{$prefix}x-min-gutters
+		#{$mixin_prefix}-left: calc(var(--gutter-horizontal-min) * 1px)
+		#{$mixin_prefix}-right: calc(var(--gutter-horizontal-min) * 1px)
+	.#{$prefix}e-gutters
+		#{$mixin_prefix}-right: var(--gutter-horizontal)
+	.#{$prefix}s-gutters
+		#{$mixin_prefix}-left: var(--gutter-horizontal)
+
+	// Vertical
+	.#{$prefix}y-gutters
+		#{$mixin_prefix}-top: var(--gutter-vertical)
+		#{$mixin_prefix}-bottom: var(--gutter-vertical)
+	.#{$prefix}y-min-gutters
+		#{$mixin_prefix}-top: calc(var(--gutter-vertical-min) * 1px)
+		#{$mixin_prefix}-bottom: calc(var(--gutter-vertical-min) * 1px)
+	.#{$prefix}t-gutters
+		#{$mixin_prefix}-top: var(--gutter-vertical)
+	.#{$prefix}b-gutters
+		#{$mixin_prefix}-bottom: var(--gutter-vertical)
+
+	// Directional
+	@each $direction in $directions
+		// Vertical 
+		.#{$prefix}y-gutters-#{$direction}
+			#{$mixin_prefix}-top: var(--gutter-#{$direction})
+			#{$mixin_prefix}-bottom: var(--gutter-#{$direction})
+		.#{$prefix}y-min-gutters-#{$direction}
+			#{$mixin_prefix}-top: calc(var(--gutter-#{$direction}-min) * 1px)
+			#{$mixin_prefix}-bottom: calc(var(--gutter-#{$direction}-min) * 1px)
+
+		.#{$prefix}t-gutter-#{$direction}
+			#{$mixin_prefix}-top: var(--gutter-#{$direction})
+		.#{$prefix}t-min-gutter-#{$direction}
+			#{$mixin_prefix}-top: calc(var(--gutter-#{$direction}-min) * 1px)
+
+		.#{$prefix}b-gutter-#{$direction}
+			#{$mixin_prefix}-bottom: var(--gutter-#{$direction})
+		.#{$prefix}b-min-gutter-#{$direction}
+			#{$mixin_prefix}-bottom: calc(var(--gutter-#{$direction}-min) * 1px)
+
+		// Horizontal 
+		.#{$prefix}x-gutters-#{$direction}
+			#{$mixin_prefix}-left: var(--gutter-#{$direction})
+			#{$mixin_prefix}-right: var(--gutter-#{$direction})
+		.#{$prefix}x-min-gutters-#{$direction}
+			#{$mixin_prefix}-left: calc(var(--gutter-#{$direction}-min) * 1px)
+			#{$mixin_prefix}-right: calc(var(--gutter-#{$direction}-min) * 1px)
+
+		.#{$prefix}e-gutter-#{$direction}
+			#{$mixin_prefix}-right: var(--gutter-#{$direction})
+		.#{$prefix}e-min-gutter-#{$direction}
+			#{$mixin_prefix}-right: calc(var(--gutter-#{$direction}-min) * 1px)
+
+		.#{$prefix}s-gutter-#{$direction}
+			#{$mixin_prefix}-left: var(--gutter-#{$direction})
+		.#{$prefix}s-min-gutter-#{$direction}
+			#{$mixin_prefix}-left: calc(var(--gutter-#{$direction}-min) * 1px)

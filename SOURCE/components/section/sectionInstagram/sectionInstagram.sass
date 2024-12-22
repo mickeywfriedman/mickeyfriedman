@@ -1,0 +1,24 @@
+.section-instagram__lane
+	--height-min: 200
+	--height-max: 350
+	--gutters-min: 10
+	--gutters-max: 20
+	+fluid('height', var(--height-min), var(--height-max))
+.section-instagram__link
+	display: block
+	img
+		height: 100%
+.section-instagram__item
+	height: 100%
+.section-instagram__link
+	height: 100%
+.section-instagram__item-inner
+	+fluid('padding-left', var(--gutters-min), var(--gutters-max))
+	+fluid('padding-right', var(--gutters-min), var(--gutters-max))
+	height: 100%
+.section-instagram__inner
+	.section-instagram__lane
+		&:first-child
+			+fluid('padding-bottom', var(--gutters-min), var(--gutters-max))
+		&:last-child
+			+fluid('padding-top', var(--gutters-min), var(--gutters-max))

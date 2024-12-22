@@ -1,0 +1,42 @@
+.post-meta
+	+reset-list
+	line-height: 1
+	i
+		font-size: 14px !important
+		vertical-align: middle
+		margin-right: 4px
+	li
+		display: inline-flex
+		flex-wrap: wrap
+		align-items: center
+		line-height: 1.6
+		vertical-align: middle
+		span
+			vertical-align: middle
+	li:not(:last-child):after
+		content: '/'
+		color: var(--color-accent)
+		display: inline-block
+		margin-left: 8px
+		margin-right: 4px
+		+trans1
+	ul
+		padding-left: 0
+	a
+		display: inline-block
+		vertical-align: middle
+		white-space: nowrap
+.post-meta_block
+	li
+		display: block
+		margin: 0.5em 0
+	li:not(:last-child):after
+		display: none
+.post-meta_flex
+	display: flex
+	justify-content: space-between
+	li:not(:last-child):after
+		display: none
+.post-meta_accent
+	*
+		color: var(--color-accent)

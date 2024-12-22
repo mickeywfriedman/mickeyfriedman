@@ -1,0 +1,21 @@
+.has-drop-cap:not(:focus):not(.has-drop-cap_split)
+	&:first-letter
+		+dropcap
+		&:after
+			content: ''
+			display: table
+			clear: both
+.arts-split-text:not(.js-arts-split-text)
+	.has-drop-cap
+		> div:first-child
+			display: inline-block !important
+			float: left
+			&:after
+				content: ''
+				display: table
+				clear: both
+		&:first-letter
+			margin: unset
+			float: unset
+			font-size: unset
+			text-transform: unset

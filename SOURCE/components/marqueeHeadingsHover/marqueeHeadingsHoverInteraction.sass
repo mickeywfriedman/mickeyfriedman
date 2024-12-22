@@ -1,0 +1,32 @@
+.marquee-headings-hover_hovered
+	.marquee-headings-hover__item:not(.current)
+		.marquee-headings-hover__heading, .headings-hover__item-image
+			opacity: .1
+			visibility: visible
+	.marquee-headings-hover__button-normal
+		transform: scale(0)
+	.marquee-headings-hover__button-hover
+		transform: translate(-50%, -50%) scale(1)
+		opacity: 1
+		.rotating-button__link
+			color: var(--color-accent)
+	.marquee-headings-hover__content
+		opacity: 0
+		transition-delay: 0s
+.marquee-headings-hover__item.current
+	*
+		color: currentColor
+
+.marquee-headings-hover_mouse-drag
+	cursor: grab
+	user-select: none
+	*
+		cursor: grab
+	&.marquee-headings-hover_pressed
+		cursor: grabbing
+		*
+			cursor: grabbing
+.marquee-headings-hover_dragging
+	.arts-is-dragging__blocker
+		opacity: 1
+		visibility: visible

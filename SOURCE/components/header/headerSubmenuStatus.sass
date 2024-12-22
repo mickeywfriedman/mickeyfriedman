@@ -1,0 +1,47 @@
+.header__overlay-submenu-status
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	position: absolute
+	top: 0
+	right: 0
+	opacity: 0
+	visibility: hidden
+	padding-right: calc(var(--gutter-horizontal) / 2)
+	pointer-events: none !important
+	z-index: 500
+	transform: translateY(-30px)
+	+trans1
+.header__submenu-label
+	display: inline-block
+	line-height: 1
+	height: 40px
+	text-align: right
+	transition: transform 0.3s ease
+
+.header__label_opened-next
+	position: absolute
+	top: calc(50% - 8px)
+	transform: translate(-50%, 100%)
+	right: 0
+	opacity: 0
+	color: currentColor
+.header__label_opened-current
+	position: absolute
+	top: calc(50% - 8px)
+	transform: translate(-50%, -50%)
+	right: 0
+	opacity: 1
+	// +trans1
+
++max-screen-md
+	.header__overlay-submenu-status
+		left: 0
+		right: 0
+		text-align: center
+		padding-right: var(--gutter-horizontal)
++max-screen-sm
+	.header__overlay-submenu-status
+		display: none
+		top: auto
+		bottom: 0

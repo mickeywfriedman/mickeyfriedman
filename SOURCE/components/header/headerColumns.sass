@@ -1,0 +1,70 @@
+.header__col
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+	+fluid('padding-left', var(--header-min-gutters-horizontal), var(--header-max-gutters-horizontal))
+	+fluid('padding-right', var(--header-min-gutters-horizontal), var(--header-max-gutters-horizontal))
+	+fluid('padding-top', var(--header-min-gutters-vertical), var(--header-max-gutters-vertical))
+	+fluid('padding-bottom', var(--header-min-gutters-vertical), var(--header-max-gutters-vertical))
+	+trans1
+	z-index: 500
+	@extend .ui-element
+	&:hover
+		.header__label-normal
+			transform: translateY(-100%)
+			opacity: 0
+		.header__label-hover
+			transform: translateY(0%)
+			opacity: 1
+.has-cursor-follower
+	.header__col_left[data-arts-cursor-follower-target]
+		&:hover
+			.header__label
+				transform: translateX(20px)
+	.header__col_right, .header__col_center
+		&[data-arts-cursor-follower-target]
+			&:hover
+				.header__label
+					transform: translateX(-20px)
+.header__col-overlay, .header__col-widgets
+	position: relative
+	height: 100%
+	overflow: hidden
+.header__col-overlay
+	padding-left: var(--gutter-horizontal)
+	padding-right: calc(var(--gutter-horizontal) / 2)
+.header__col-widgets
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
+	align-items: flex-start
+	border-left: 1px solid var(--color-border-opacity)
+	padding-left: calc(var(--gutter-horizontal) / 2)
+	padding-right: var(--gutter-horizontal)
+	padding-bottom: var(--gutter-vertical)
+.header__col_left
+	text-align: left
+.header__col_center
+	text-align: center
+.header__col_right
+	text-align: right
+
++max-screen-md
+	.header__col-overlay, .header__col-widgets
+		justify-content: flex-start
+		padding-left: var(--gutter-horizontal)
+		padding-right: var(--gutter-horizontal)
+		height: auto
+	.header__col-overlay
+		padding-top: calc(var(--gutter-vertical) + var(--header-height))
+		padding-bottom: calc(var(--gutter-vertical) * 2)
+	.header__col-widgets
+		padding-top: calc(var(--gutter-vertical) * 2)
+		padding-bottom: calc(var(--gutter-vertical) * 2)
+		border-left: none
+		border-top: 1px solid var(--color-border-opacity)
+	.header__col_md-border-left
+		border-left: none
+	.header__col_md-border-right
+		border-right: none

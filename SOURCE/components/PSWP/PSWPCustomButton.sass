@@ -1,0 +1,33 @@
+.pswp-custom-button
+	display: flex
+	align-items: center
+	justify-content: center
+	+fluid('padding-left', var(--pswp-min-gutters-horizontal), var(--pswp-max-gutters-horizontal))
+	+fluid('padding-right', var(--pswp-min-gutters-horizontal), var(--pswp-max-gutters-horizontal))
+	+fluid('padding-top', var(--pswp-min-gutters-vertical), var(--pswp-max-gutters-vertical))
+	+fluid('padding-bottom', var(--pswp-min-gutters-vertical), var(--pswp-max-gutters-vertical))
+	+trans1
+	z-index: 500
+	@extend .ui-element
+.pswp-custom-button__label
+	position: relative
+	white-space: nowrap
+	transition: transform 0.3s ease
+	@extend .header__burger-label
+
+.pswp-custom-button_left
+	margin-right: auto
+.pswp-custom-button_center
+	margin-left: auto
+	margin-right: auto
+
+.has-cursor-follower
+	.pswp-custom-button_left[data-arts-cursor-follower-target]
+		&:hover
+			.pswp-custom-button__label
+				transform: translateX(20px)
+	.pswp-custom-button_right, .pswp-custom-button_center
+		&[data-arts-cursor-follower-target]
+			&:hover
+				.pswp-custom-button__label
+					transform: translateX(-20px)

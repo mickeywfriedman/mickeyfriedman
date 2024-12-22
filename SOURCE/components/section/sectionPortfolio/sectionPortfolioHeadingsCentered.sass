@@ -1,0 +1,90 @@
+.section-portfolio-headings-centered__item
+	display: block
+	position: relative
+	z-index: 50
+	pointer-events: none
+.section-portfolio-headings-centered__item-header
+	text-align: center
+// 	position: absolute
+// 	top: 50%
+// 	left: var(--gutter-horizontal)
+// 	right: var(--gutter-horizontal)
+// 	width: auto
+// 	transform: translateY(-50%)
+// 	text-align: center
+// 	margin: auto
+// 	z-index: 60
+// .section-portfolio-headings-centered__item-media
+// 	position: relative
+// 	width: 720px
+// 	max-width: 50vw
+// 	pointer-events: auto
+	//
+.section-portfolio-headings-centered__item
+	max-width: calc(100% - var(--gutter-horizontal) * 2)
+	margin: auto
+.section-portfolio-headings-centered__item-media
+	position: relative
+.section-portfolio-headings-centered__link
+	display: block
+	pointer-events: auto
+.section-portfolio-headings-centered__wrapper-button
+	display: inline-block
+	pointer-events: auto
+
+.section-portfolio-headings-centered__item-counter
+	position: absolute
+	top: 0
+	left: 1em
+	white-space: nowrap
+	pointer-events: none
+	transform: none !important
+	// z-index: 100
+	[data-arts-split-text-element="char"], .js-arts-split-text__char
+		&:nth-child(1)
+			z-index: -1
+			transform: translateY(-40%)
+		&:nth-child(2)
+			z-index: 60
+			transform: translateY(-40%)
+.section-portfolio-headings-centered__item-counter:not([data-arts-split-text-ready="true"])
+	transform: translateY(-40%)
+
+.section-portfolio-headings-centered__item-counter_right
+	left: auto
+	right: 1em
+
++max-screen-md
+	// .text-lg-end
+	// 	.infinite-list__wrapper-counter
+	// 		left: auto
+	// 		right: 1em
+	.section-portfolio-headings-centered__item-header
+		margin-top: 1em
+	// .section-portfolio-headings-centered__item-counter
+	// 	left: auto
+	// 	right: 1em
+
+.section-portfolio-headings-centered__item_hovered
+	.hover-zoom__zoom
+		transform: scale(0.98)
+	.hover-zoom__inner
+		transform: scale(1.02)
+
++min-screen-md
+	.section-portfolio-headings-centered__item
+		max-width: 100%
+	.section-portfolio-headings-centered__item-header
+		position: absolute
+		top: 50%
+		left: var(--gutter-horizontal)
+		right: var(--gutter-horizontal)
+		width: auto
+		transform: translateY(-50%)
+		margin: auto
+		z-index: 60
+	.section-portfolio-headings-centered__item-media
+		position: relative
+		width: 720px
+		max-width: calc(50vw - var(--gutter-horizontal))
+		pointer-events: auto

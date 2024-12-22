@@ -1,0 +1,71 @@
+.slider-testimonials
+	position: relative
+.slider-testimonials__container
+	position: relative
+.slider-testimonials__sign
+	display: inline-flex
+	svg
+		+fluid('width', 40, 80)
+		fill: currentColor
+.slider-testimonials__dot-image
+	display: inline-block
+	+trans1(opacity)
+.slider-testimonials__dot
+	cursor: pointer
+	--size-min: 60
+	--size-max: 80
+	position: relative
+	+fluid('width', var(--size-min), var(--size-max))
+	+fluid('height', var(--size-min), var(--size-max))
+	outline: none
+	border-radius: 100%
+	margin: 0.5em
+	background-color: #000
+	svg
+		display: block
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		margin: auto
+		width: calc(100% + 2px)
+		height: calc(100% + 2px)
+		border-radius: 100%
+		stroke-width: 4px
+		pointer-events: none
+		.circle
+			stroke: currentColor
+	&[current]
+		.slider-testimonials__dot-image
+			opacity: 1
+	&:not([current])
+		.slider-testimonials__dot-image
+			opacity: .5
+	&:not([current]):hover
+		.slider-testimonials__dot-image
+			opacity: 1
+	*
+		pointer-events: none
+.slider-testimonials__dots
+	display: inline-flex
+	flex-wrap: wrap
+	align-items: center
+	justify-content: center
+	margin-left: -0.5em
+	margin-right: -0.5em
+.slider-testimonials__arrow
+	position: absolute
+	top: 50%
+	transform: translate(0%, -50%)
+.slider-testimonials__arrow-prev
+	left: var(--gutter-horizontal)
+	right: auto
+	transform: translate(-33%, -50%)
+.slider-testimonials__arrow-next
+	left: auto
+	right: var(--gutter-horizontal)
+	transform: translate(33%, -50%)
+
++max-screen-lg
+	.slider-testimonials__arrow
+		+fluid('top', 35, 60)

@@ -1,0 +1,22 @@
+.w-container-edge-end
+	max-width: 100%
+	width: calc( 100% - ( (100vw - 1320px) / 2 ) - var(--bs-gutter-x) )
+	margin-left: auto
+	text-align: left
+
+.w-container-edge-start
+	max-width: 100%
+	width: calc( 100% - ( (100vw - 1320px) / 2 ) - var(--bs-gutter-x) )
+	margin-right: auto
+	text-align: right
+
++max-screen-xxl
+	.w-container-edge-end, .w-container-edge-start
+		width: 100%
+		text-align: center
+
++max-screen-xl
+	.w-container-edge-end
+		width: calc( 100% - ( (100vw - 1140px) / 2 ) - var(--bs-gutter-x) )
+	.w-container-edge-start
+		width: calc( 100% - ( (100vw - 1140px) / 2 ) - var(--bs-gutter-x) )

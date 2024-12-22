@@ -1,0 +1,103 @@
+.menu-classic
+	position: relative
+	+reset-list
+	margin: 0 -0.25em
+	font-weight: bold
+	font-size: 14px
+	line-height: 2
+	> li
+		position: relative
+		display: inline-block
+		&:not(:last-child)
+			margin-right: 0.25em
+		a
+			display: block
+			padding: 0.5em 1em
+	> li.menu-item-has-children
+		> a
+			&:after
+				content: '+'
+				display: inline-block
+				margin-left: 0.5em
+				+trans1(transform)
+				transform: rotate(0deg)
+				transform-origin: center center
+			&:hover
+				&:after
+					transform: rotate(-90deg)
+	> li:not(.menu-item-has-children)
+		svg
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			stroke: currentColor
+			stroke-width: 1px
+			pointer-events: none
+	.menu-item-has-children
+		position: relative
+		> a
+			&:hover
+				~ ul
+					opacity: 1
+					visibility: visible
+					transform: translate(0px, 0px)
+					z-index: 50
+	> li.current-menu-item
+		> a
+			color: var(--color-accent)
+	> li.current-menu-ancestor
+		> a
+			color: var(--color-accent)
+		.sub-menu li.current-menu-ancestor > a
+			color: var(--color-classic-submenu-links-hover)
+		.sub-menu li.current-menu-item > a
+			color: var(--color-classic-submenu-links-hover)
+	.sub-menu
+		position: absolute
+		top: 100%
+		left: 1em
+		transform: translate(0px, 1em)
+		+reset-list
+		opacity: 0
+		visibility: hidden
+		+trans2
+		z-index: -1
+		background-color: #fff
+		border-radius: 4px
+		text-align: left
+		box-shadow: 0px 0px 30px 0px rgba(24, 24, 24, 0.08)
+		&:hover
+			opacity: 1
+			visibility: visible
+			transform: translate(0, 0)
+			z-index: 50
+		> li
+			white-space: nowrap
+			a
+				padding: 0.5em 1.25em
+				background-color: transparent
+				color: var(--color-classic-submenu-links)
+				&:hover
+					background-color: var(--color-classic-submenu-links-hover-background)
+					color: var(--color-classic-submenu-links-hover)
+		> li:first-child
+			a
+				border-top-left-radius: 4px
+				border-top-right-radius: 4px
+		> li:last-child
+			a
+				border-bottom-left-radius: 4px
+				border-bottom-right-radius: 4px
+		ul
+			top: 0
+			left: calc(100% + 1px)
+			transform: translate(0.5em, 0)
+			opacity: 0
+			visibility: hidden
+.ajax-loading
+	.menu-classic
+		pointer-events: auto
+		*
+			pointer-events: auto

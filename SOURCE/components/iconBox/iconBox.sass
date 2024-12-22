@@ -1,0 +1,23 @@
+.icon-box
+	display: inline-flex
+	align-items: center
+	flex-direction: column
+	&:hover
+		.icon-box__wrapper-icon
+			border-color: currentColor
+.has-cursor-follower .icon-box[data-arts-cursor-follower-target*='magnetic: true']
+	&:hover
+		.icon-box__wrapper-icon
+			border-color: transparent
+.icon-box__wrapper-icon
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	@include fluid('width', 120, 160)
+	@include fluid('height', 120, 160)
+	border-radius: 50%
+	border: 1px solid var(--color-borders)
+	transition: border-color 0.3s ease
+
+.icon-box__icon
+	@include fluid-type(30, 40)

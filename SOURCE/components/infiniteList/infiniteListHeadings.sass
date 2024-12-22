@@ -1,0 +1,19 @@
+.infinite-list__inner-headings
+	position: relative
+	overflow: hidden
+	display: flex
+	flex-direction: column
+.infinite-list__item-heading
+	display: inline-block
+	line-height: 1
+	transform: translateY(100%)
+	+trans1
+	&:hover
+		*
+			color: currentColor
+.infinite-list:not(.infinite-list_dragging)
+	.infinite-list__item-heading
+		&.current
+			opacity: 1
+			visibility: visible
+			transform: translateY(-50%)

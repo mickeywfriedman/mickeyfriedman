@@ -1,0 +1,32 @@
+.widget_recent_comments
+	ul
+		li
+			padding: 0.75em 0
+			margin-bottom: 0 !important
+			border-bottom: 1px solid var(--color-border-opacity)
+			&:first-child
+				padding-top: 0
+			&:last-child
+				padding-bottom: 0
+				border-bottom: none
+			a
+				font-weight: 600
+	.comment-author-link
+		a
+			font-weight: normal
+
+.wp-block-latest-comments__comment-link
+	font-weight: normal
+
+.wp-block-latest-comments
+	li
+		padding: 1em 0
+		margin-bottom: 0 !important
+		border-bottom: 1px solid var(--color-border-opacity)
+		&:first-child
+			padding-top: 0
+		&:last-child
+			padding-bottom: 0
+			border-bottom: none
+		a:not(.wp-block-latest-comments__comment-author)
+			font-weight: 500

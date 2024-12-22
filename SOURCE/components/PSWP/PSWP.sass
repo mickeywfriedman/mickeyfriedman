@@ -1,0 +1,38 @@
+.pswp
+	--pswp-min-gutters-horizontal: 20
+	--pswp-max-gutters-horizontal: 40
+	--pswp-min-gutters-vertical: 10
+	--pswp-max-gutters-vertical: 30
+	&[data-arts-color-theme='dark']
+		.pswp__bg
+			background-color: #000
+		.pswp-custom-caption
+			background-color: #070707
+	&[data-arts-color-theme='light']
+		.pswp__bg
+			background-color: #fff
+		.pswp-custom-caption
+			background-color: #f8f8f8
+.pswp__top-bar
+	height: auto
+.pswp__wrapper-embed
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 100%
+	height: 100%
+	padding-top: 120px
+	+fluid('padding-right', 20, 120)
+	padding-bottom: 120px
+	+fluid('padding-left', 20, 120)
+	iframe
+		width: 100%
+		height: 100%
+	video
+		width: 100%
+		height: auto
+.pswp:not(.pswp--zoomed-in)
+	.pswp__zoom-wrap
+		overflow: hidden
+		width: 100%
+		height: 100%

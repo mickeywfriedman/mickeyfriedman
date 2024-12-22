@@ -1,0 +1,63 @@
+.header
+	&.opened
+		.header__col
+			border-color: transparent
+		.header__col_logo, .header__col_additional
+			transform: translateY(-30px)
+			opacity: 0
+			visibility: hidden
+		.header__wrapper-overlay-menu
+			display: block
+			pointer-events: auto
+		.header__border-horizontal
+			transform: scaleX(0)
+		.header__border-vertical
+			transform: scaleY(0)
+		&.opened-submenu
+			.header__overlay-menu-back, .header__overlay-submenu-status
+				pointer-events: initial
+				transform: translateY(0)
+				opacity: 1
+				visibility: visible
+			.menu-overlay__counter
+				border-color: transparent
+	&.animating
+		.header__wrapper-overlay-menu
+			// display: block
+			*:not(.header__overlay-menu-back)
+				pointer-events: none !important
+		.menu-overlay__counter
+			border-color: transparent
+.header:not(.opened)
+	.header__wrapper-overlay-menu
+		pointer-events: none !important
+		*
+			pointer-events: none !important
+.header__wrapper-overlay-menu
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	overflow: hidden
+	opacity: 0
+	visibility: hidden
+.header_hidden-not-opened:not(.opened)
+	opacity: 0
+	visibility: hidden
+
+.header__overlay-inner
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	overflow: hidden
+	width: 100%
+	height: 100%
+
++max-screen-md
+	.header:not(.opened-submenu)
+		.header__overlay-inner
+			overflow-x: hidden
+			overflow-y: overlay
+			-webkit-overflow-scrolling: touch
+			overscroll-behavior: contain

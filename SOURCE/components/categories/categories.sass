@@ -1,0 +1,12 @@
+.categories
+	+reset-list
+	li
+		display: inline-flex
+		flex-wrap: wrap
+		align-items: center
+		line-height: 1
+	li:not(:last-child):after
+		content: '/'
+		display: inline-block
+		margin-left: 0.6em
+		margin-right: 0.6em

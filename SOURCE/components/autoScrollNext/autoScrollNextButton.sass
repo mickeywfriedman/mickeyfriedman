@@ -1,0 +1,26 @@
+.auto-scroll-next
+	&[data-arts-os-animation="true"]
+		.auto-scroll-next__button-hover
+			opacity: 0
+			transform: translate(-50%, -50%) scale(1)
+.auto-scroll-next__wrapper-button
+	@extend .infinite-list__wrapper-button
+	pointer-events: all !important
+	cursor: pointer
+	*
+		pointer-events: none
+.auto-scroll-next_scrolling
+	.auto-scroll-next__button-normal
+		transform: scale(0)
+	.auto-scroll-next__button-hover
+		transform: translate(-50%, -50%) scale(1)
+		opacity: 1
+		*
+			color: var(--color-accent)
+.auto-scroll-next__button-normal, .auto-scroll-next__button-hover, .auto-scroll-next__button-static
+	transition: transform 0.3s ease, opacity 0.3s ease
+.auto-scroll-next__button-hover
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%) scale(0)

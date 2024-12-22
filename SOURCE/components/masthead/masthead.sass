@@ -1,0 +1,86 @@
+.masthead__overlay
+	z-index: 10
+.masthead__scroll-down
+	display: inline-block
+	position: absolute
+	left: var(--gutter-horizontal)
+	right: var(--gutter-horizontal)
+	bottom: calc(var(--gutter-horizontal-min) * 1px)
+	z-index: 100
+	&.offset-lg-6
+		+min-screen-md()
+			margin-left: calc(50% - var(--gutter-horizontal))
+.masthead__scroll-down_left
+	left: var(--gutter-horizontal)
+	right: auto
+.masthead__scroll-down_right
+	left: auto
+	right: var(--gutter-horizontal)
+.masthead__header
+	position: relative
+	z-index: 50
+.masthead__footer
+	position: absolute
+	bottom: var(--gutter-vertical)
+	left: var(--gutter-horizontal)
+	right: var(--gutter-horizontal)
+	z-index: 50
+.masthead__background-full-height
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	height: 100%
+	max-height: 100%
+	width: auto
+	z-index: 0
+.masthead__background-full-height_left
+	left: 0
+	right: auto
+.masthead__background-full-height_center
+	left: 50%
+	right: auto
+	transform: translateX(-50%)
+.masthead__background-full-height_right
+	left: auto
+	right: 0
+.masthead__background
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	height: 100%
+	max-width: 100%
+	max-height: 100%
+	overflow: hidden
+	z-index: 0
+.masthead__background-top-space
+	position: absolute
+	top: calc(var(--header-height) + var(--gutter-vertical) / 2)
+	left: 0
+	right: 0
+	bottom: 0
+	height: 100%
+	max-width: 100%
+	max-height: calc(100% - var(--header-height) - var(--gutter-vertical) / 2)
+
+.masthead__background_right
+	margin-left: auto
+.masthead__media
+	position: relative
+	overflow: hidden
+	width: 100%
+
++min-screen-lg
+	.masthead__background_right
+		right: var(--gutter-horizontal)
+
++max-screen-lg
+	.masthead__background-mobile
+		height: 50vh
+	.masthead__scroll-down_mobile-center
+		left: var(--gutter-horizontal)
+		right: var(--gutter-horizontal)
+		text-align: center

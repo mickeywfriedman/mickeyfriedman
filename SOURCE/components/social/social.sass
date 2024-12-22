@@ -1,0 +1,54 @@
+.soc1al
+	display: block
+	--social-size: 16
+	padding: 0
+	list-style: none
+	margin: calc(var(--social-size) * -0.25px)
+	.soc1al__item
+		display: inline-block
+		transition: none
+		margin: calc(var(--social-size) * 0.25px)
+		a
+			display: flex !important
+			align-items: center
+			justify-content: center
+			width: calc(var(--social-size) * 2.5px)
+			height: calc(var(--social-size) * 2.5px)
+			font-size: calc(var(--social-size) * 1px)
+			border-radius: 50%
+			transition: 0.3s color ease, 0.3s border-color ease
+			&:hover
+				border-color: var(--color-accent) !important
+				svg g
+					fill: var(--color-accent)
+		svg
+			max-width: calc(var(--social-size) * 1px)
+			max-height: calc(var(--social-size) * 1px)
+		svg g
+			+trans1
+.soc1al_large
+	--social-size: 20
+.soc1al_xlarge
+	--social-size: 24
+.soc1al_small
+	--social-size: 12
+
+.has-cursor-follower
+	.soc1al_borders-opacity
+		.soc1al__item
+			a[data-arts-cursor-follower-target]:hover
+				border-color: transparent !important
+.soc1al_borders-opacity
+	.soc1al__item
+		a
+			border: 1px solid var(--color-border-opacity)
+.no-cursor-follower
+	.soc1al_borders-opacity-no-cursor
+		.soc1al__item
+			a
+				border: 1px solid var(--color-border-opacity)
+
+.soc1al_borders-solid
+	.soc1al__item
+		a
+			border: 1px solid var(--color-border-solid)

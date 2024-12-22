@@ -1,0 +1,102 @@
+.portfolio-item
+	overflow: hidden
+	position: relative
+	display: block
+	z-index: 50
+	--counter-scale-from: 0.5
+	--counter-scale-to: 1
+	--button-hover-background: var(--color-accent)
+	--button-hover-border-color: var(--color-accent)
+	--button-hover-color: #000
+	&:hover
+		.portfolio-item__overlay
+			opacity: 0
+		.portfolio-item__inner-button
+			&:after
+				background-color: var(--button-hover-background)
+				transform: scale(var(--counter-scale-to, 1))
+		.portfolio-item__inner-button_border
+			&:after
+				box-shadow: inset 0 0 0 1px
+		.portfolio-item__button-label
+			transform: translateY(0)
+			opacity: 1
+			color: var(--button-hover-color)
+		.portfolio-item__circle
+			color: var(--button-hover-color)
+			transform: translate(-50%, calc(-50% - 30px))
+			opacity: 0
+		.portfolio-item__wrapper-title
+			transform: translateY(30px)
+			opacity: 0
+.portfolio-item_button-bordered
+	--button-hover-background: transparent
+	--button-hover-border-color: var(--color-accent)
+	--button-hover-color: var(--color-accent)
+.portfolio-item__overlay
+	+trans1
+	z-index: 0
+.portfolio-item__wrapper-title
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 20px
+	z-index: 50
+	+trans1
+	transform: translateY(0)
+.portfolio-item__wrapper-button
+	display: flex
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+.portfolio-item__circle
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	+trans1
+.portfolio-item__button
+	border-color: transparent !important
+.portfolio-item__inner-button
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border-radius: 50%
+		transform: scale(var(--counter-scale-from, 0.5))
+		background-color: transparent
+		transition: transform 0.2s ease, box-shadow 0.2s ease
+.portfolio-item__inner-button_border
+	&:after
+		box-shadow: inset 0 0 0 2px var(--color-border-opacity)
+.portfolio-item__button-label
+	position: relative
+	display: inline-block
+	opacity: 0
+	transform: translateY(30px)
+	+trans1
+	z-index: 50
+.portfolio-item__wrapper-circle
+	position: absolute
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	// width: 80px
+	// height: 80px
+	+fluid('width', 40, 80)
+	+fluid('height', 40, 80)
+	border-radius: 50%
+	border: 1px solid var(--color-border-opacity)
+	top: var(--gutter-horizontal)
+	right: var(--gutter-horizontal)
+	transform: translate(50%, -50%)
+	z-index: 50
+	pointer-events: none
+
++max-screen-sm
+	.portfolio-item__wrapper-circle
+		transform: translate(0%, 0%)

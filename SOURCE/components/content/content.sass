@@ -1,0 +1,27 @@
+.content
+	u
+		display: inline-block
+		position: relative
+		text-decoration: none
+		transition: color 0.6s ease
+		svg
+			position: absolute
+			top: 55%
+			left: 50%
+			width: 110%
+			height: 80%
+			transform: translate(-50%, -50%) rotate(-5deg)
+			transform-origin: center center
+			stroke: currentColor
+			stroke-width: 1px
+			pointer-events: none
+			ellipse
+				stroke-dashoffset: 0
+				stroke-dasharray: none
+	> *:first-child:not(.soc1al)
+		margin-top: 0 !important
+	> *:last-child:not(.soc1al)
+		margin-bottom: 0 !important
+.split-text-animation-revealed
+	u
+		color: var(--color-accent)

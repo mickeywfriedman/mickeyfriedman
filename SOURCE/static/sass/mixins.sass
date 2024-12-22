@@ -1,0 +1,95 @@
+// Rest <ul> <ol> default styles
+@mixin reset-list
+	list-style-type: none
+	padding: 0
+	margin: 0
+
+// Typography presets
+@mixin typography-preset-rules($name)
+	font-family: var(--#{$name}-font-family)
+	font-weight: var(--#{$name}-font-weight)
+	line-height: var(--#{$name}-line-height)
+	letter-spacing: var(--#{$name}-letter-spacing)
+	@include fluid-type(var(--#{$name}-min-font-size), var(--#{$name}-max-font-size))
+	color: var(--#{$name}-color)
+
+@mixin typography-preset($name)
+	.#{$name}
+		+typography-preset-rules($name)
+
+@mixin typography-preset-tag($name)
+	#{$name}, .#{$name}
+		+typography-preset-rules($name)
+
+// Dropcap
+@mixin dropcap
+	@extend .dropcap
+	float: left
+	font-style: normal
+	margin: 0.15em 0.25em 0 0
+	&:after
+		content: ''
+		display: table
+		clear: both
+
+@mixin trans1($property: all)
+	transition: $property 0.3s ease
+
+@mixin trans2($property: all)
+	transition: $property 0.2s cubic-bezier(0.785, 0.135, 0.150, 0.860)
+
+@mixin hoverZoomEffect
+	.hover-zoom__zoom
+		transform: scale(0.98)
+	.hover-zoom__inner
+		transform: scale(1.02)
+
+// Responsive MQ
+@mixin max-screen-xxl
+	@media screen and (max-width: $xxl)
+		@content
+
+@mixin min-screen-xxl
+	@media screen and (min-width: $xxl + 1)
+		@content
+//
+@mixin max-screen-xl
+	@media screen and (max-width: $xl)
+		@content
+
+@mixin min-screen-xl
+	@media screen and (min-width: $xl + 1)
+		@content
+//
+@mixin max-screen-lg
+	@media screen and (max-width: $lg)
+		@content
+
+@mixin min-screen-lg
+	@media screen and (min-width: $lg + 1)
+		@content
+//
+@mixin max-screen-md
+	@media screen and (max-width: $md)
+		@content
+
+@mixin min-screen-md
+	@media screen and (min-width: $md + 1)
+		@content
+//
+@mixin max-screen-sm
+	@media screen and (max-width: $sm)
+		@content
+
+@mixin min-screen-sm
+	@media screen and (min-width: $sm + 1)
+		@content
+//
+@mixin max-screen-xs
+	@media screen and (max-width: $xs)
+		@content
+
+@mixin min-screen-xs
+	@media screen and (min-width: $xs + 1)
+		@content
+//

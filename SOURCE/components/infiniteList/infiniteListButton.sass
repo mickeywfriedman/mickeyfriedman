@@ -1,0 +1,43 @@
+.infinite-list
+	&[data-arts-os-animation="true"]
+		.infinite-list__button-hover
+			opacity: 0
+			transform: translate(-50%, -50%) scale(1)
+.infinite-list_hovered, .infinite-list_hovered-zoom-out
+	.infinite-list__button-normal
+		transform: scale(0)
+	.infinite-list__button-hover
+		transform: translate(-50%, -50%) scale(1)
+		opacity: 1
+		*
+			color: var(--color-accent)
+.infinite-list__wrapper-button
+	display: inline-block
+	line-height: 1
+	position: absolute
+	left: var(--gutter-horizontal)
+	bottom: var(--gutter-vertical)
+	z-index: 50
+	pointer-events: none
+	&.text-start
+		left: var(--gutter-horizontal)
+		right: auto
+	&.text-center
+		left: var(--gutter-horizontal)
+		right: var(--gutter-horizontal)
+	&.text-end
+		left: auto
+		right: var(--gutter-horizontal)
+.infinite-list__wrapper-button_top
+	top: var(--gutter-vertical)
+	bottom: auto
+.pt-header-height
+	.infinite-list__wrapper-button_top
+		top: calc(var(--gutter-vertical) + var(--header-height))
+.infinite-list__button-normal, .infinite-list__button-hover, .infinite-list__button-static
+	transition: transform 0.3s ease, opacity 0.3s ease
+.infinite-list__button-hover
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%) scale(0)

@@ -1,0 +1,37 @@
+.input-checkbox
+	position: relative
+	display: block
+	width: 100%
+	margin-bottom: 0
+.input-checkbox__checkbox
+	display: none
+.input-checkbox__checkbox
+	//
+	&:checked
+		~ .input-checkbox__label
+			&:before
+				content: 'check',
+				color: var(--color-accent)
+.input-checkbox__label
+	cursor: pointer
+	display: inline-block
+	&:before
+		content: ''
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		vertical-align: middle
+		line-height: 1
+		font-weight: bold
+		width: 1.3em
+		height: 1.3em
+		border-radius: 4px
+		background-color: transparent
+		border: 1px solid currentColor
+		font-family: 'Material Icons'
+		font-size: 18px
+		margin-right: 0.4em
+		+trans1
+	&:hover
+		&:before
+			color: var(--color-accent)

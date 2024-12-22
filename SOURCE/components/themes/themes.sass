@@ -1,0 +1,46 @@
+$themes: dark, light
+
+@mixin themePresets($name)
+	color: var(--paragraph-color-#{$name}-theme)
+	--paragraph-color: var(--paragraph-color-#{$name}-theme)
+	--ui-element-color: var(--ui-element-color-#{$name}-theme)
+	--display-xxl-color: var(--display-xxl-color-#{$name}-theme)
+	--display-xl-color: var(--display-xl-color-#{$name}-theme)
+	--display-caps-color: var(--display-caps-color-#{$name}-theme)
+	--h1-color: var(--h1-color-#{$name}-theme)
+	--h2-color: var(--h2-color-#{$name}-theme)
+	--h3-color: var(--h3-color-#{$name}-theme)
+	--h4-color: var(--h4-color-#{$name}-theme)
+	--h5-color: var(--h5-color-#{$name}-theme)
+	--h6-color: var(--h6-color-#{$name}-theme)
+	--blockquote-color: var(--blockquote-color-#{$name}-theme)
+	--dropcap-color: var(--dropcap-color-#{$name}-theme)
+	--subheading-color: var(--subheading-color-#{$name}-theme)
+	--overlay-menu-item-color: var(--overlay-menu-item-color-#{$name}-theme)
+	--overlay-submenu-item-color: var(--overlay-submenu-item-color-#{$name}-theme)
+	--super-label-color: var(--super-label-color-#{$name}-theme)
+
+	--color-accent: var(--color-accent-#{$name}-theme)
+	--color-border-solid: var(--color-border-solid-#{$name}-theme)
+	--color-border-opacity: var(--color-border-opacity-#{$name}-theme)
+	--color-links: var(--color-links-#{$name}-theme)
+
+@each $name in $themes
+	[data-arts-color-theme=#{$name}]
+		+themePresets($name)
+
+	+max-screen-lg
+		[data-arts-color-theme-lg=#{$name}]
+			+themePresets($name)
+
+	+max-screen-md
+		[data-arts-color-theme-md=#{$name}]
+			+themePresets($name)
+
+	+max-screen-sm
+		[data-arts-color-theme-sm=#{$name}]
+			+themePresets($name)
+
+	+max-screen-xs
+		[data-arts-color-theme-xs=#{$name}]
+			+themePresets($name)

@@ -1,0 +1,24 @@
+.infinite-list__wrapper-counter
+	position: absolute
+	top: 0
+	left: 1em
+	white-space: nowrap
+	transform: none !important
+	[data-arts-split-text-element="char"], .js-arts-split-text__char
+		&:nth-child(1)
+			z-index: -1
+			transform: translateY(-33%)
+		&:nth-child(2)
+			z-index: 60
+			transform: translateY(-33%)
+.infinite-list__wrapper-counter:not([data-arts-split-text-ready="true"])
+	transform: translateY(-33%)
+
+.infinite-list__wrapper-counter_right
+	left: auto
+	right: 1em
+
++max-screen-md
+	.infinite-list__wrapper-counter
+		left: auto
+		right: 1em

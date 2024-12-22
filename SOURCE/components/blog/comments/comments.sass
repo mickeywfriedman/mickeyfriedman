@@ -1,0 +1,107 @@
+.comments-title, .comment-reply-title
+	position: relative
+	z-index: 50
+	@extend .h4
+	margin-top: 0
+	margin-bottom: 0.25em
+.comment-list
+	+reset-list
+	padding-left: 0 !important
+	> li
+		padding-top: 1.5em
+		padding-bottom: 1.5em
+		ol.children
+			+reset-list
+			padding-left: 4%
+			li
+				padding-top: 1.5em
+				padding-bottom: 1.5em
+			li:last-child
+				padding-bottom: 0
+	> li:not(:last-child)
+		border-bottom: 1px solid var(--color-border-opacity)
+	> ol
+		+reset-list
+.comment-author
+	margin-right: 2em
+	flex: 0 0 auto
+	.avatar
+		position: relative
+		width: 100%
+		max-width: 80px
+		max-height: 80px
+		border-radius: 100%
+		display: block
+.comment-meta
+	display: flex
+	align-items: center
+	justify-content: space-between
+	margin-bottom: 0.5em
+.comment-metadata
+	@extend .subheading
+	margin-left: 1rem
+	a
+		border-bottom: none !important
+.comment-body
+	display: flex
+	.fn
+		@extend .h6
+.comment-content
+	width: 100%
+.reply
+	display: inline-block
+	line-height: 1
+	margin-top: 0.5em
+	margin-bottom: 0.5em
+.comment-reply-link
+	@extend .subheading
+	border-bottom: none !important
+	margin-right: 24px
+	&:before
+		content: '\e15e'
+		font-family: 'Material Icons'
+		text-transform: none
+		margin-right: 0.5rem
+.comment-respond
+	position: relative
+	z-index: 50
+	margin-top: 1em
+.comment-edit-link
+	@extend .subheading
+	border-bottom: none !important
+	&:before
+		content: '\e3c9'
+		font-family: 'Material Icons'
+		text-transform: none
+		margin-right: 6px
+.trackback, .pingback
+	.edit-link
+		margin-left: 0.5em
+#cancel-comment-reply-link
+	margin-top: 1em
+	margin-left: 1em
+.comment
+	outline-width: 1em
+	outline-style: solid
+	outline-color: transparent
+	transition: background-color 2.4s ease, outline-color 2.4s ease, opacity 0.3s ease
+.comment_ajax-added
+	outline-color: #eeece6
+	background-color: #eeece6
+.comment_ajax-unapproved
+	.comment-body
+		opacity: .3
+		pointer-events: none
+
++max-screen-md
+	.comment-author
+		margin-right: 1em
+		.avatar
+			max-width: 50px
+			max-height: 50px
+	.comment-meta
+		flex-wrap: wrap
+	.comment-metadata
+		margin-top: 0.75em
+		margin-left: 0
+		width: 100%

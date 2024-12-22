@@ -1,0 +1,91 @@
+// Display headings
++typography-preset('display-xxl')
++typography-preset('display-xl')
++typography-preset('display-caps')
+.display-caps
+	text-transform: uppercase
+
+// h1 – h6
+@for $i from 1 through 6
+	+typography-preset-tag('h#{$i}')
+
+// Subheading (small caps)
++typography-preset('subheading')
+.subheading
+	text-transform: uppercase
+
+// Overlay Menu Item
++typography-preset('overlay-menu-item')
+
+// Overlay Submenu item
++typography-preset('overlay-submenu-item')
+
+// Paragraph
++typography-preset('paragraph')
+
+// UI Element
++typography-preset('ui-element')
+
+// Dropcap
++typography-preset('dropcap')
+
+// Super (small label next to a heading)
++typography-preset('super-label')
+
+// Links
+a
+	+trans1(color)
+	text-decoration: none
+	color: var(--color-links)
+	&:hover
+		color: var(--color-accent)
+		text-decoration: none
+		// *
+		// 	color: var(--color-accent)
+	*
+		// +trans1(color)
+		pointer-events: none
+.strong
+	font-weight: bold
+.italic
+	font-style: italic
+
+h1, h2, h3
+	+fluid('margin-top', 16, 24)
+	+fluid('margin-bottom', 16, 24)
+h4, h5, h6
+	+fluid('margin-top', 16, 24)
+	+fluid('margin-bottom', 16, 24)
+p
+	margin-top: 1em
+	margin-bottom: 1em
+blockquote
+	display: block
+	@include fluid-type(var(--blockquote-min-font-size), var(--blockquote-max-font-size))
+	line-height: var(--blockquote-line-height)
+	letter-spacing: calc(var(--blockquote-letter-spacing) * 1px)
+	font-style: italic
+	margin-top: 1.5em
+	margin-bottom: 1.5em
+	padding: 1.5em
+	border: 1px solid var(--color-border-opacity)
+	border-radius: 4px
+	p
+		margin-top: 0
+		@include fluid-type(var(--blockquote-min-font-size), var(--blockquote-max-font-size))
+		line-height: var(--blockquote-line-height)
+		&:last-child, &:last-of-type
+			margin-bottom: 0
+	cite
+		display: block
+		margin-top: 1em
+		@include fluid-type(var(--paragraph-min-font-size), var(--paragraph-max-font-size))
+		line-height: 1
+		color: var(--paragraph-color)
+		font-style: normal
+		font-weight: bold
+	svg
+		+fluid('max-width', 30, 50)
+		height: auto
+		margin-top: 4px
+		fill: currentColor

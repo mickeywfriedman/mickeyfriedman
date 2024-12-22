@@ -1,0 +1,46 @@
+.team-member
+	position: relative
+	width: 100%
+	height: 100%
+.team-member__footer
+	position: relative
+
+.team-member_has-social
+	&:hover
+		.team-member__position
+			transition-delay: 50ms
+			transform: translateY(-30px)
+			opacity: 0
+			visibility: hidden
+		.team-member__name
+			transform: translateY(-20px)
+			opacity: 0
+			visibility: hidden
+			transition-delay: 0ms
+		.team-member__social
+			li
+				transform: translateY(0px)
+				opacity: 1
+				visibility: visible
+			li
+				@for $i from 1 through 10
+					&:nth-child(#{$i})
+						transition-delay: 50ms + $i * 20ms
+
+.team-member__name
+	+trans1
+	transition-delay: 150ms
+.team-member__position
+	+trans1
+	transition-delay: 100ms
+.team-member__social
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	.soc1al
+		li
+			transform: translateY(30px)
+			+trans2
+			opacity: 0
+			visibility: hidden

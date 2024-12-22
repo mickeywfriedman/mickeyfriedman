@@ -1,0 +1,53 @@
+.input-float
+	position: relative
+	display: block
+	width: 100%
+	margin-bottom: 0
+.input-float__label
+	position: absolute
+	top: 0.75em
+	left: 0
+	margin: auto
+	display: block
+	font-size: 16px
+	@include trans1
+	transform-origin: left center
+	pointer-events: none
+	color: currentColor
+	opacity: 0.7
+.input-float__input
+	display: block
+	width: 100%
+	width: 100%
+	border-bottom: 1px solid var(--color-border-opacity)
+	border-top: none
+	border-right: none
+	border-left: none
+	outline: none
+	padding: 14px 0 8px
+	+trans1
+	background-color: transparent
+	border-radius: 0
+	color: inherit
+	line-height: 1.5
+.input-float__input_textarea
+	resize: none
+	height: 200px
+.input-float__error, span.wpcf7-not-valid-tip
+	display: block
+	font-size: 13px
+	color: red
+	text-align: left
+	margin-top: 4px
+
+.input-float__input_focused, .input-float__input_not-empty
+	//
+	+ .input-float__label
+		transform: scale(0.8571) translateY(-1.75rem)
+		pointer-events: all
+
+.input-float__input_focused
+	border-color: var(--color-border-solid)
+	+ .input-float__label
+		opacity: 1
+		pointer-events: all

@@ -1,0 +1,76 @@
+.menu-overlay
+	+reset-list
+	position: relative
+	width: 100%
+	height: 100%
+	overflow: hidden
+	.sub-menu
+		+reset-list
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 0
+		overflow: hidden
+		padding-top: var(--header-height)
+		padding-bottom: var(--header-height)
+		visibility: hidden
+		> li
+			display: block
+			> a
+				display: inline-block
+				padding: 0.4rem 0
+	> li
+		display: block
+		overflow: hidden
+		> a
+			display: inline-flex
+			align-items: center
+			padding: 1rem 0
+			&:hover
+				.menu-overlay__counter
+					color: currentColor
+					border-color: currentColor
+	li.current-menu-item, li.current-menu-ancestor
+		> a
+			color: var(--color-accent)
+			*
+				color: var(--color-accent)
+.menu-overlay li a *
+	pointer-events: none
+
+.menu-overlay__heading
+	flex: 0 1 auto
+.menu-overlay__counter
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 70px
+	height: 70px
+	flex: 1 0 70px
+	border-radius: 100%
+	border: 1px solid var(--color-border-opacity)
+	white-space: nowrap
+	transition: color 0.2s ease, border-color 0.2s ease
+.text-start
+	.menu-overlay__counter
+		margin-right: calc(var(--gutter-horizontal) / 2)
+		order: -1
+.text-end
+	.menu-overlay__counter
+		margin-left: calc(var(--gutter-horizontal) / 2)
+
++max-screen-md
+	.menu-overlay
+		.sub-menu
+			padding-top: 0
+	.menu-overlay__counter
+		width: 50px
+		height: 50px
+		flex: 1 0 50px
+	.text-start
+		.menu-overlay__counter
+			margin-right: calc(var(--gutter-horizontal))
+	.text-end
+		.menu-overlay__counter
+			margin-left: calc(var(--gutter-horizontal))

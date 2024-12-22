@@ -1,0 +1,7 @@
+.button.button_solid
+	background-color: var(--ui-element-color)
+	color: var(--ui-element-color-dark-theme)
+	border: none
+[data-arts-color-theme='dark']:not([data-arts-color-theme='dark'] [data-arts-color-theme='light'])
+	.button.button_solid:not([data-arts-color-theme='dark'] .button[data-arts-color-theme='dark'])
+		color: var(--ui-element-color-light-theme)

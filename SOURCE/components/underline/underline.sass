@@ -1,0 +1,21 @@
+.underline, .underline-hover-self
+	display: inline
+	position: relative
+	background-image: linear-gradient(currentColor, currentColor)
+	background-position: 0% 100%
+	background-repeat: no-repeat
+	background-size: 100% 2px
+	[data-arts-split-text-element="line"], .js-arts-split-text__line
+		display: inline-block !important
+		background-image: linear-gradient(currentColor, currentColor)
+		background-position: 0% 100%
+		background-repeat: no-repeat
+		background-size: 100% 2px
+		transition: background-size .4s ease
+.underline-hover-self
+	background-position: 100% 100%
+	background-size: 100% 2px
+	transition: background-size .4s ease, color 0.2s ease-in-out
+	&:hover
+		background-position: 0% 100%
+		background-size: 100% 2px

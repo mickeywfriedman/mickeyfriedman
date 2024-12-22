@@ -1,0 +1,48 @@
+html
+	font-size: $em-base
+	-webkit-font-smoothing: antialiased
+	text-rendering: optimizeSpeed
+	-webkit-text-rendering: optimizeSpeed
+	-moz-osx-font-smoothing: grayscale
+	font-kerning: none
+	scroll-behavior: initial !important
+	width: 100%
+	min-height: 100%
+	scrollbar-gutter: stable
+body
+	width: 100%
+	min-height: 100%
+	min-width: 320px
+	font-family: var(--paragraph-font-family)
+	+fluid('line-height', var(--paragraph-min-line-height), var(--paragraph-max-line-height))
+	color: var(--paragraph-color)
+	font-size: 100%
+	word-wrap: break-word
+	overflow-wrap: anywhere
+	overflow-x: hidden
+.lock-scroll
+	body
+		overflow: hidden !important
+img, iframe
+	max-width: 100%
+img
+	display: block
+	height: auto
+.page-wrapper
+	position: relative
+	z-index: 100
+	overflow: hidden
+.page-wrapper__content
+	position: relative
+	z-index: 100
+	overflow: hidden
+[tabindex]
+	outline: none
+.d-flex-centered
+	display: flex
+	align-items: center
+	justify-content: center
+.d-inline-flex-centered
+	display: inline-flex
+	align-items: center
+	justify-content: center

@@ -1,0 +1,59 @@
+.infinite-list_mouse-drag
+	cursor: grab
+	*
+		cursor: grab
+	&.infinite-list_pressed
+		cursor: grabbing
+		*
+			cursor: grabbing
+
+.infinite-list_scrolling
+	*
+		pointer-events: none
+
+.infinite-list_dragging
+	user-select: none
+	*
+		pointer-events: none
+
+.infinite-list_scrolling
+	.infinite-list__counters
+		opacity: 0.1
+		transition-delay: 0.4s
+
+.infinite-list_dragging
+	.infinite-list__counters
+		opacity: 0.1
+		transition-delay: 0s
+	.arts-is-dragging__blocker
+		opacity: 1
+		visibility: visible
+
+.infinite-list_pressed
+	.infinite-list__zoom
+		transform: scale(0.95)
+	.infinite-list__inner
+		transform: scale(1.05)
+
+.infinite-list_hovered, .infinite-list_hovered-zoom-out
+	&:not(.infinite-list_dragging)
+		.infinite-list__hide-on-hover
+			transform: translateY(-100%)
+			opacity: 0
+			visibility: hidden
+		.infinite-list__opacity-link:not(.current)
+			opacity: .5
+
+.infinite-list_hovered
+	.infinite-list__zoom-link.current
+		.infinite-list__zoom
+			transform: scale(0.98)
+		.infinite-list__inner
+			transform: scale(1.02)
+
+.infinite-list_hovered-zoom-out
+	.infinite-list__zoom-link:not(.current)
+		.infinite-list__zoom
+			transform: scale(0.95)
+		.infinite-list__inner
+			transform: scale(1.05)

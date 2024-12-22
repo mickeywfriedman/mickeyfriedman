@@ -1,0 +1,123 @@
+.slider-dots
+	display: inline-flex
+	flex-wrap: wrap
+	position: absolute
+	bottom: var(--gutter-vertical)
+	z-index: 50
+	margin: -4px
+.slider-dots_vertical
+	flex-direction: column
+	height: auto
+	vertical-align: initial
+.slider-dots_left, .slider-dots_center-left
+	left: var(--gutter-horizontal)
+	margin-right: auto
+	justify-content: flex-start
+.slider-dots_center-left
+	top: 50%
+	transform: translateY(-50%)
+	bottom: auto
+.slider-dots_center
+	left: var(--gutter-horizontal)
+	right: var(--gutter-horizontal)
+	margin: 0 auto
+	justify-content: center
+.slider-dots_right, .slider-dots_center-right
+	right: var(--gutter-horizontal)
+	margin-left: auto
+	.slider-dots__item
+		justify-content: flex-end
+	.slider-dots__label
+		order: -1
+.slider-dots_center-right
+	top: 50%
+	transform: translate(50%, -50%)
+	bottom: auto
+.slider-dots__item
+	display: inline-flex
+	align-items: center
+	cursor: pointer
+	margin: 4px
+	color: var(--color-border-solid)
+	transition: color 0.3s ease, opacity 0.3s ease
+	&[current]
+		color: var(--color-accent)
+		.slider-dots__dot:after
+			background-color: var(--color-accent)
+		.slider-dots__label, .slider-dots__counter
+			opacity: 1
+	&:not([current]):hover
+		color: var(--color-border-solid)
+		.slider-dots__label, .slider-dots__counter
+			opacity: 1
+.slider-dots__label, .slider-dots__counter
+	display: inline-block
+	pointer-events: none
+	padding: 0 0.75em
+	opacity: .6
+	transition: color 0.3s ease, opacity 0.3s ease
+.slider-dots__dot
+	pointer-events: none
+	--size-min: 25
+	--size-max: 40
+	position: relative
+	+fluid('width', var(--size-min), var(--size-max))
+	+fluid('height', var(--size-min), var(--size-max))
+	outline: none
+	display: inline-flex
+	align-items: center
+	border-radius: 100%
+	vertical-align: middle
+	z-index: 50
+	svg
+		display: block
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		margin: auto
+		width: 100%
+		height: 100%
+		border-radius: 100%
+		stroke-width: 4px
+		pointer-events: none
+		.circle
+			stroke: currentColor
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
+		margin: auto
+		display: block
+		+fluid('width', 2, 4)
+		+fluid('height', 2, 4)
+		border-radius: 100%
+		background-color: var(--color-border-solid)
+.slider-dots__dot_number
+	--size-min: 40
+	--size-max: 80
+	justify-content: center
+	flex-wrap: wrap
+	svg
+		stroke-width: 1px
+	&:after
+		display: none
+
+.no-cursor-follower
+	.slider-dots__dot
+		box-shadow: 0px 0px 0px 1px var(--color-border-opacity) inset
+		transition: box-shadow 0.3s ease
+	.slider-dots__item
+		&:not([current]):hover
+			.slider-dots__dot
+				box-shadow: 0px 0px 0px 1px var(--color-accent) inset
+
++max-screen-lg
+	.slider-dots
+		bottom: var(--gutter-vertical)
+	.slider-dots_center-right
+		transform: translate(0%, -50%)
+		bottom: auto

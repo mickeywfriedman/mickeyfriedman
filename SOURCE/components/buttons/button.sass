@@ -1,0 +1,97 @@
+.button
+	position: relative
+	display: inline-block
+	white-space: nowrap
+	cursor: pointer
+	box-shadow: none
+	border-width: 2px
+	border-style: solid
+	padding: 16px 36px
+	border-radius: 96px
+	color: var(--color-dark-4)
+	+trans2
+	transition-property: color, background-color, border-color
+	outline: none
+	&:focus
+		outline: none
+	&:hover
+		.button__label-normal
+			.button__title
+				transform: translate(0%, -100%)
+				opacity: 0
+			.button__icon
+				opacity: 0
+				transform: translate(100%, 0%)
+		.button__label-hover
+			.button__title
+				transform: translate(0%, 0%)
+				opacity: 1
+			.button__icon
+				opacity: 1
+				transform: translate(0%, 0%)
+	*
+		pointer-events: none
+
+.button_icon
+	display: inline-flex
+	border: none
+	.button__label
+		padding: 0
+.button__label-hover
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	.button__title
+		transform: translate(0%, 100%)
+		opacity: 0
+	.button__icon
+		transform: translate(-100%, 0%)
+		opacity: 0
+
+.button__label-normal
+	.button__title
+		transform: translate(0%, 0%)
+		opacity: 1
+
+.button__title
+	display: inline-block
+	transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out
+.button__label
+	display: inline-block
+	padding: 16px 36px
+
+.button__icon
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out
+	vertical-align: middle
+	margin-bottom: 0.1em
+.button__icon_before
+	margin-right: 0.5em
+.button__icon_after
+	margin-left: 0.25em
+	margin-right: -0.5em
+
+.button_fullwidth
+	width: 100%
+.button-fullwidth
+	.button
+		width: 100%
+
+@media screen and (max-width: $xl)
+	.button
+		padding: 12px 24px
+	.button__label
+		padding: 12px 24px
+
+@media screen and (max-width: $md)
+	.button
+		padding: 12px 24px
+	.button__label
+		padding: 12px 24px
+	.button__icon
+		// width: 43px
+		i
+			font-size: 20px

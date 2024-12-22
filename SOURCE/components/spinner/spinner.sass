@@ -1,0 +1,22 @@
+.spinner
+	position: fixed
+	left: var(--gutter-horizontal)
+	bottom: var(--gutter-vertical)
+	width: 30px
+	height: 30px
+	z-index: 10000
+	animation: rotate 2s linear infinite
+	transform-origin: center center
+	opacity: 0
+	visibility: hidden
+	color: var(--color-accent-light-theme)
+	circle
+		stroke: currentColor
+		stroke-width: 2px
+		stroke-dasharray: 150, 200
+		stroke-dashoffset: -150
+		animation: dash 1.5s ease-in-out infinite
+		stroke-linecap: round
+.has-cursor-follower
+	.spinner
+		display: none !important

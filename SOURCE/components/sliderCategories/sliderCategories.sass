@@ -1,0 +1,29 @@
+.slider-categories
+	display: inline-flex
+	flex-wrap: wrap
+	position: absolute
+	bottom: var(--gutter-vertical)
+	z-index: 50
+	white-space: nowrap
+.slider-categories_left
+	left: var(--gutter-horizontal)
+	margin-right: auto
+	justify-content: flex-start
+.slider-categories_center
+	left: var(--gutter-horizontal)
+	right: var(--gutter-horizontal)
+	margin: 0 auto
+	justify-content: center
+.slider-categories_right
+	right: var(--gutter-horizontal)
+	margin-left: auto
+	justify-content: flex-end
+.slider-categories__inner
+	position: relative
+	overflow: hidden
+.slider-categories__item
+	transition: all 0.6s ease
+	opacity: 1
+.slider-categories__item:not([current])
+	transform: translateY(-100%)
+	opacity: 0

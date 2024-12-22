@@ -1,0 +1,22 @@
+.hover-zoom
+	&.shape-top-arc
+		.hover-zoom__zoom, .hover-zoom__inner
+			transform-origin: center bottom
+	&.shape-bottom-arc
+		.hover-zoom__zoom, .hover-zoom__inner
+			transform-origin: center top
+.hover-zoom
+	&:hover:not(:focus)
+		+hoverZoomEffect
+.hover-zoom-hovered
+	+hoverZoomEffect
+	a, a *
+		color: var(--color-accent)
+.hover-zoom__inner
+	overflow: hidden
+	height: 100%
+	width: 100%
+.hover-zoom__zoom, .hover-zoom__inner
+	transform-origin: center center
+	transform: scale(1)
+	transition: transform 0.4s ease-in-out

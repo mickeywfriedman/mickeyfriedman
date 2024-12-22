@@ -1,0 +1,57 @@
+$presets: 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'
+$distance_prefixes: 'm', 'p'
+$mixin_prefix: 'margin'
+
+@each $prefix in $distance_prefixes
+	@if $prefix == 'p'
+		$mixin_prefix: 'padding'
+	//
+	@each $preset in $presets
+		// All Sides
+		.#{$prefix}-#{$preset}
+			@include fluid('#{$mixin_prefix}', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}))
+		// Vertical
+		.#{$prefix}y-#{$preset}
+			@include fluid('#{$mixin_prefix}-top', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}))
+			@include fluid('#{$mixin_prefix}-bottom', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}))
+		// Horizontal
+		.#{$prefix}x-#{$preset}
+			@include fluid('#{$mixin_prefix}-left', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}))
+			@include fluid('#{$mixin_prefix}-right', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}))
+		// Top
+		.#{$prefix}t-#{$preset}
+			@include fluid('#{$mixin_prefix}-top', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}))
+		// End [Right]
+		.#{$prefix}e-#{$preset}
+			@include fluid('#{$mixin_prefix}-right', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}))
+		// Bottom
+		.#{$prefix}b-#{$preset}
+			@include fluid('#{$mixin_prefix}-bottom', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}))
+		// Start [Left]
+		.#{$prefix}s-#{$preset}
+			@include fluid('#{$mixin_prefix}-left', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}))
+
+		// Negative margins
+		@if $prefix == 'm'
+			// Negative Margin Top
+			.#{$prefix}t-minus-#{$preset}
+				@include fluid('#{$mixin_prefix}-top', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}), $min_width, $max_width, -1)
+			// Negative Margin End [Right]
+			.#{$prefix}e-minus-#{$preset}
+				@include fluid('#{$mixin_prefix}-right', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}), $min_width, $max_width, -1)
+			// Negative Margin Bottom
+			.#{$prefix}b-minus-#{$preset}
+				@include fluid('#{$mixin_prefix}-bottom', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}), $min_width, $max_width, -1)
+			// Negative Margin Start [Left]
+			.#{$prefix}s-minus-#{$preset}
+				@include fluid('#{$mixin_prefix}-left', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}), $min_width, $max_width, -1)
+
+		// // Padding Offsets
+		// @if $prefix == 'p'
+		// 	.#{$prefix}t-#{$preset}
+		// 		&.offset_bottom
+		// 			padding-top: 0
+		// 			.section-offset__content, > .elementor-container
+		// 				@include fluid-translate-y(var(--distance-min-#{$preset}), var(--distance-max-#{$preset}), $min_width, $max_width)
+		// 			&.mb-#{$preset}
+		// 				@include fluid('margin-bottom', var(--distance-min-#{$preset}), var(--distance-max-#{$preset}))

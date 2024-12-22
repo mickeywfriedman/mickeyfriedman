@@ -1,0 +1,49 @@
+.button-circles
+	display: inline-flex
+	justify-content: space-between
+	flex-wrap: wrap
+	width: 20px
+	height: 20px
+	padding: 0 !important
+.button-circles__circle
+	position: relative
+	width: 8px
+	height: 8px
+	outline: none
+	display: inline-block
+	border: 2px solid currentColor
+	vertical-align: middle
+	border-radius: 100%
+	&:nth-child(1)
+		align-self: flex-start
+	&:nth-child(2)
+		align-self: flex-start
+	&:nth-child(3)
+		align-self: flex-end
+	&:nth-child(4)
+		align-self: flex-end
+	// svg
+	// 	display: block
+	// 	position: absolute
+	// 	top: 50%
+	// 	left: 50%
+	// 	transform: translate(-50%, -50%)
+	// 	margin: auto
+	// 	width: 8px
+	// 	height: 8px
+	// 	border-radius: 100%
+	// 	stroke-width: 8px
+	// 	z-index: 50
+	// 	.circle
+	// 		stroke: currentColor
+
+// @media screen and (max-width: $sm)
+// 	.button-circles
+// 		width: 30px
+// 		height: 30px
+// 	.button-circles__circle
+// 		width: 12px
+// 		height: 12px
+// 		svg
+// 			width: 12px
+// 			height: 12px
